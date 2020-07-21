@@ -1,0 +1,54 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Jul 21, 2020 at 12:24 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `Laboratorio`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Usuarios`
+--
+
+CREATE TABLE `Usuarios` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(20) DEFAULT NULL,
+  `apellido` varchar(20) DEFAULT NULL,
+  `cuenta` varchar(10) DEFAULT NULL,
+  `contrasena` varchar(10) DEFAULT NULL,
+  `idPrivilegios` varchar(2) DEFAULT NULL,
+  `crea` varchar(10) DEFAULT NULL,
+  `modifica` varchar(10) DEFAULT NULL,
+  `fechaModifica` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fechaCrea` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Usuarios`
+--
+ALTER TABLE `Usuarios`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
