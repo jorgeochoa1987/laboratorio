@@ -1,13 +1,20 @@
+
 <?php
+
 $servername = "localhost";
-$database = "Laboratorio";
+$database = "laboratorio";
 $username = "admin";
-$password = "Admin2020";
-// conexión
-$conn = mysqli_connect($servername, $username, $password, $database);
-//Verifico
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-mysqli_close($conn);
+$password = "Admin2020"; 
+
+$conexion = new mysqli($servername, $username, $password,$database);
+ 
+ if($conexion === false) { 
+    echo 'Ha habido un error <br>'.mysqli_connect_error(); 
+   } else {
+
+//echo 'Conectado a la base de datos';
+    
+   }
+
+
+?>
