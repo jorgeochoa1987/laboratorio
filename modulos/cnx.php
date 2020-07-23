@@ -12,7 +12,7 @@ $conexion = new mysqli($servername, $username, $password,$database);
     echo 'Ha habido un error <br>'.mysqli_connect_error(); 
    } else {
 
-//echo 'Conectado a la base de datos';
+   //echo 'Conectado a la base de datos';
     
    }
 

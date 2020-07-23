@@ -1,8 +1,10 @@
 <?php
 require('cnx.php');
-if (isset($_POST['save'])) {
-    $id = $_POST['id'];
-    $pass = $_POST['pass'];
+
+if (isset($_POST['save'])) 
+	{
+    	$id = $_POST['id'];
+    	$pass = $_POST['pass'];
    
     if($id=='' or $pass =='')
     {
@@ -14,8 +16,10 @@ if (isset($_POST['save'])) {
 	  $resultado = mysqli_query($conexion, $sql );
 	  $datos = mysqli_fetch_array($resultado);
 	 // echo $sql;
+
 	  $userBD = $datos['identificacion'];
 	  $passwordBD = $datos['clave'];
+
 	  if ($id = $userBD  and $pass = $passwordBD)
 	  {
 		 echo("1"); 
@@ -24,7 +28,6 @@ if (isset($_POST['save'])) {
 	  {
 		  echo "2";
 		  //echo $userBD; echo $passwordBD; 
-
 	  }
 
 
