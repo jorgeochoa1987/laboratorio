@@ -1,4 +1,8 @@
 
+<?php
+ // start a session
+ session_start();
+ ?>
 
     <input id="id_user" type="text" placeholder="Ingrese id" required>
     <input id="pass" type="password"  placeholder="Ingrese contraseña" required>
@@ -20,6 +24,7 @@ $("#acceder").on("click", function(){
 
     var id_user = $("#id_user").val();
     var pass_user = $("#pass").val();
+    
 
     $.ajax({ 
         url: '../modulos/login.php',  // esto es una función 
@@ -27,17 +32,18 @@ $("#acceder").on("click", function(){
         data: {
         'save':1,  
         'id': id_user,
-        'pass':pass_user,
-        },
+        'pass':pass_user
+        }
     }).done(function(echo){
     $("#resultado").html(echo);
      if(echo==1)
      {
         window.location.href = "dashboard.php";
+        
      }
      else
      {
-         alert('Verifica nuevamente la información' echo);
+         alert('Verifica nuevamente la información');
      }
 }
 

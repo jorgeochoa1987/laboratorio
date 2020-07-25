@@ -1,4 +1,7 @@
 <?php
+ session_start();
+ $_SESSION['username'] = $_POST['id'];
+
 require('cnx.php');
 
 if (isset($_POST['save'])) 
