@@ -37,7 +37,7 @@ $("#guardar").on("click", function(){
     var crea  = 'jorge';
 
     $.ajax({ 
-        url: 'modelo.php',  // esto es una función 
+        url: '../modulos/modelousuario.php',  // esto es una función 
         type: 'POST', 
         data: {
         'accion':'guardarinformacionusuarios',  
