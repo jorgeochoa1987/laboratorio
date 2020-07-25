@@ -35,7 +35,6 @@ $("#guardar").on("click", function(){
     var usuario = $("#usuario").val();
     var password = $("#pass").val();
     var crea  = 'jorge';
-    var creafecha= '1' ;
 
     $.ajax({ 
         url: 'modelo.php',  // esto es una función 
@@ -51,7 +50,6 @@ $("#guardar").on("click", function(){
         'usuariousuario':usuario,
         'passusuario': password,
         'creausuario':crea,
-        'creafechausuario':creafecha,
         },
     }).done(function(echo){
     $("#resultado").html(echo);

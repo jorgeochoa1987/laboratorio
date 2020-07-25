@@ -14,7 +14,7 @@ if (isset($_POST['accion']))
 		$user = $_POST['usuariousuario'];
 		$pass = $_POST['passusuario'];
 		$crea = $_POST['creausuario'];
-		$creafecha = $_POST['creafechausuario'];
+		
 
     	if($identificacion =='' or $nombres =='' or $apellidos =='' or $correo =='' or $cargo ==''or $user =='' or  $pass =='')
     {
@@ -22,7 +22,7 @@ if (isset($_POST['accion']))
       exit();
     }
 	
-	  $sql = "INSERT INTO `usuarios`( `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `crea`, `creaFecha`, `clave`, `usuario`) VALUES ('$identificacion','$nombres','$apellidos','$correo','$cargo','$crea','$creafecha','$pass','$user')";
+	  $sql = "INSERT INTO `usuarios`( `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `crea`, `clave`, `usuario`) VALUES ('$identificacion','$nombres','$apellidos','$correo','$cargo','$crea','$pass','$user')";
 
 	  $resultado = mysqli_query($conexion, $sql );
 
@@ -32,7 +32,7 @@ if (isset($_POST['accion']))
 	  }
 	  	else
 	  {
-		echo("0");  
+		echo($sql);  
 	  }
         }
   }
