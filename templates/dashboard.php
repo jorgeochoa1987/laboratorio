@@ -10,6 +10,7 @@
 </head>
 <body>
     <button> <a href="usuario_l.php">Usuario </a> </button>
+    <button> <a href="cargolist.php">Cargos </a> </button>
     <script>
     </script>
 </body>
