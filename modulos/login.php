@@ -1,6 +1,5 @@
 <?php
  session_start();
- $_SESSION['username'] = $_POST['id'];
 
 require('cnx.php');
 
@@ -8,7 +7,8 @@ if (isset($_POST['save']))
 	{
     	$id = $_POST['id'];
     	$pass = $_POST['pass'];
-   
+		$_SESSION= $_POST['id'];
+
     if($id=='' or $pass =='')
     {
       echo '<div class="comment_box" id="Respuesta"> debe ingresar usuario y contraseña </div>';
