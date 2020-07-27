@@ -4,7 +4,7 @@ require('../modulos/cnx.php');
 
 if (isset($_POST['accion'])) 
 	{
-	if ($_POST['accion'] == 'guardarmodulo') 
+	if ($_POST['accion'] == 'guardarcargo') 
 		{
         $nombrecargo = $_POST['cargo'];
 		$crea = $_POST['creausuario'];

@@ -1,54 +1,34 @@
 <?php
  // start a session
  session_start();
- $cod = $_GET["parametro"];
  require('../modulos/cnx.php');
- $cargo = "SELECT  `nombre`,  FROM `Cargos` WHERE `id` = $cod ";
 
+if(empty($_GET['id']))
+{
+    header('Location: Cargolist.php');
+}
+$iduser = $_GET['id'];
+$sql = mysqli_query($conection,"SELECT  `nombre`,  FROM `Cargos` WHERE `id` = $iduser");
+$result_sql = mysqli_num_rows($sql);
+if ($result_sql == 0) {
+    header('Location: Cargolist.php');
+}else {
+    while ($data = mysqli_fetch_array($sql)) {
+    $iduser = $data['nombre'];
+    }
+}
  ?>
 
 
-<input id="cargoname" type="text" placeholder="cargo" value= $cargo required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTUALIZAR USUARIO</title>
+</head>
+<body>
+<input id="cargoname" type="text" placeholder="cargo" value= <?php echo $iduser; ?> required>
 <input type="submit" id="guardar" value="Guardar">
-
-    <div id="resultado"></div>
-
-
-    
-<!--===============================================================================================-->
-<script src="../js/librerias/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-
-
-
-<script>
-$("#guardar").on("click", function(){
- 
-    var cargo = $("#cargoname").val();
-    var crea = '<?php echo $_SESSION ['username']?>';
-
-    $.ajax({ 
-        url: '../modulos/modelocargo.php',  // esto es una función 
-        type: 'POST', 
-        data: {
-        'accion':'guardarcargo',  
-        'save':1,
-        'cargo': cargo,
-        'creausuario':crea,
-        },
-    }).done(function(echo){
-    $("#resultado").html(echo);
-     if(echo==1)
-     {
-        alert('Registro guardado exitosamente');
-     }
-     else
-     {
-         alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
-});
-
-</script>    
+</body>
+</html>

@@ -36,9 +36,12 @@
      </table>
      <script>
     function Editar(id) {
+     
+       window.location = "http://localhost:8888/laboratorio/templates/Cargomodificar.php?id"+id;
+    }
+    function Eliminar(id) {
        window.location = "http://localhost:8888/laboratorio/templates/cargomodificar.php?parametro"+id;
     }
-
 
      </script>
 </body>
