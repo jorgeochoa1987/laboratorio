@@ -14,7 +14,7 @@
 <br>
 
     <table border = '1'>
-    <button onclick= "location.href='http://localhost:8888/laboratorio/templates/cargo.php'" >Nuevo</button>
+    <button onclick= "location.href='cargo.php'" >Nuevo</button>
     <tr>
     <td>Id</td>
     <td>Cargo</td>
@@ -28,8 +28,8 @@
     echo "<tr>";
     echo "<td>".$row['id'] ."</td>";
     echo "<td>".$row['nombre'] ."</td>";
-    echo "<td> <button onclick='Editar(".$row['id'] .")'> Editar </button> </td>";
-    echo "<td> <button onclick=\"Eliminar(".$row['id'] .")\"> Eliminar </button> </td>";
+    echo "<td> <button onclick='Editar(".$row['id'].")'> Editar </button> </td>";
+    echo "<td> <button onclick=\"Eliminar(".$row['id'].")\"> Eliminar </button> </td>";
     echo "</tr>";
     ?>
     <?php }?>
@@ -39,10 +39,11 @@
      <script>
     function Editar(id) {
      console.log(id);
-       window.location = "http://localhost:8888/laboratorio/templates/Cargomodificar.php?id="+id;
+       window.location = "Cargomodificar.php?id="+id;
+       console.log("ingresé");
     }
     function Eliminar(id) {
-       window.location = "http://localhost:8888/laboratorio/templates/cargomodificar.php?parametro="+id;
+       window.location = "cargomodificar.php?parametro="+id;
     }
 
      </script>

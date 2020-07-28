@@ -2,12 +2,12 @@
  // start a session
  session_start();
  ?>
-
+ 
 
 <input id="cargoname" type="text" placeholder="cargo" required>
 <input type="submit" id="guardar" value="Guardar">
-
-    <div id="resultado"></div>
+<input value=<?php echo  $_SESSION ['username'] ?> id="usuario"  hidden>
+<div id="resultado"></div> 
 
 
     
@@ -21,7 +21,7 @@
 $("#guardar").on("click", function(){
  
     var cargo = $("#cargoname").val();
-    var crea = '<?php echo $_SESSION ['username']?>';
+    var crea =$("#usuario").val();
 
     $.ajax({ 
         url: '../modulos/modelocargo.php',  // esto es una función 

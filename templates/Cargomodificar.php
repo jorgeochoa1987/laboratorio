@@ -11,7 +11,7 @@ $iduser = $_GET['id'];
 $sql = mysqli_query($conection,"SELECT  `nombre`,  FROM `Cargos` WHERE `id` = $iduser");
 echo $sql;
 $result_sql = mysqli_num_rows($sql);
-if ($result_sql == 0) {
+if ($result_sql != 0) {
     header('Location: Cargolist.php');
 }else {
     while ($data = mysqli_fetch_array($sql)) {
