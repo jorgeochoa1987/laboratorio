@@ -1,22 +1,35 @@
 
-<?php
- // start a session
- session_start();
- ?>
+<body>
+    <head>
+    <link href="../css/login.css" rel="stylesheet"></head></head>   
+	<div class="login"> 
+		<div class="login-screen"> 
+			<div class="app-title">
+				<h1>¡ Bienvenido !</h1>
+			</div>
 
-    <input id="id_user" type="text" placeholder="Ingrese id" required>
-    <input id="pass" type="password"  placeholder="Ingrese contraseña" required>
-   
-    <input type="submit" id="acceder" value="Iniciar sesión">
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" placeholder="username" id="id_user" >
+				<label class="login-field-icon fui-user" for="login-name"  placeholder="Id de usuario"    type="text"></label>
+				</div>
 
-    <div id="resultado"></div>
+				<div class="control-group">
+				<input type="password" class="login-field" id="pass" type="password"  placeholder="Ingrese contraseña" >
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
 
+                <button class="mt-2 btn btn-primary" id="acceder" value="Iniciar sesión" >Iniciar Sesión</button>
+            </div>
+            <div id="resultado"></div>
 
+		</div>
+	</div>
+</body>
 
 <!--===============================================================================================-->
 <script src="../js/librerias/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-
 
 
 <script>
@@ -43,7 +56,7 @@ $("#acceder").on("click", function(){
      }
      else
      {
-         alert('Verifica nuevamente la información');
+         alert('Verifica nuevamente la información'+ echo);
      }
 }
 
