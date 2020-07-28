@@ -29,10 +29,12 @@
     echo "<td>".$row['id'] ."</td>";
     echo "<td>".$row['nombre'] ."</td>";
     echo "<td> <button onclick='Editar(".$row['id'] .")'> Editar </button> </td>";
-    echo "<td> <button onclick='Eliminar(".$row['id'] .")'> Eliminar </button> </td>";
+    echo "<td> <button onclick=\"Eliminar(".$row['id'] .")\"> Eliminar </button> </td>";
     echo "</tr>";
     ?>
     <?php }?>
+ 
+    <td> <button onclick="Editar(2)"> Editar </button> </td>
      </table>
      <script>
     function Editar(id) {
