@@ -33,8 +33,6 @@
     echo "</tr>";
     ?>
     <?php }?>
- 
-    <td> <button onclick="Editar(2)"> Editar </button> </td>
      </table>
      <script>
     function Editar(id) {

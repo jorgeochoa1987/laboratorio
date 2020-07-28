@@ -3,22 +3,14 @@
  session_start();
  require('../modulos/cnx.php');
 
-//if(empty($_GET['id']))
-//{
-//    header('Location: Cargolist.php');
-//}
+if(empty($_GET['id']))
+{
+    header('Location: Cargolist.php');
+}
 $iduser = $_GET['id'];
-echo $iduser;
 $sql = "SELECT  `nombre`  FROM `Cargos` WHERE `id` = $iduser";
-
-
 $resultado = mysqli_query($conexion, $sql );
-
 $datos = mysqli_fetch_array($resultado);
-
-
-echo $sql;
-
 if ($datos == 0) {
     header('Location: Cargolist.php');
 }else {
