@@ -112,8 +112,8 @@ require('../templates/parts/header.php');
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
                                 <li>
-                                    <a href="?p=usuario_l" class="mm-active">
-                                        <i class="<?php echo $pagina =='usuario_l'?>metismenu-icon pe-7s-rocket"></i>
+                                    <a href="?p=usuariolist" class="mm-active">
+                                        <i class="<?php echo $pagina =='usuariolist'?>metismenu-icon pe-7s-rocket"></i>
                                         Usuarios
                                     </a>
                                     <a href="?p=cargolist" class="mm-active">

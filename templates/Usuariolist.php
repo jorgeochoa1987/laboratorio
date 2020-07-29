@@ -1,6 +1,6 @@
 <?php
     require('../modulos/cnx.php');
-    $usuario = "SELECT `id`, `nombre`, `crea`, `modifica`, `creaFecha`, `modificaFecha` FROM `Cargos`";
+    $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `usuario` FROM `usuarios`" ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +10,21 @@
     <title>Cargos</title>
 </head>
 <body>
+
 <div class="main-card mb-3 card">
-      <div class="card-body"><h5 class="card-title">Listado de cargos</h5>
-      <br> 
-         <a href="?p=cargo" >Nuevo</a>
+      <div class="card-body"><h5 class="card-title">Listado de usuarios</h5>
+            <br> 
+            <a href="?p=usuario_l" >Nuevo</a>
             <table class="mb-0 table">
                <head>
                <tr>
                   <th>Id</th>
+                  <th>Identificación</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Correo</th>
                   <th>Cargo</th>
+                  <th>Usuario</th>
                   <th>Acción</th>
                </tr>
                </head>
@@ -29,12 +35,18 @@
 
                <tr>                  
                <tr>
-                <td><?php echo $row['id'] ?></td>";
-               <td><?php echo $row['nombre'] ?></td>";
-               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> </td>";
-               <td> <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
+               <td><?php echo $row['id'] ?></td>";
+               <td><?php echo $row['identicacion'] ?></td>";
+               <td><?php echo $row['nombres'] ?></td>";
+               <td><?php echo $row['apellidos'] ?></td>";
+               <td><?php echo $row['correo'] ?></td>";
+               <td><?php echo $row['idCargo'] ?></td>";
+               <td><?php echo $row['usuario'] ?></td>";
+               <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> </td>";
+               <td> <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
                </tr>
 <?php }?>
+              
               
                </body>
             </table>
