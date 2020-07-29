@@ -1,7 +1,10 @@
 <?php 
-require('templates/parts/header.php');
-?>
+require('templates/parts/header.php');?>
 
+
+
+<?php
+require('templates/parts/footer.php');?>
 <?php
 
 if (session_status() !== PHP_SESSION_ACTIVE) { 
@@ -10,7 +13,4 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 else {
     header("Location: templates/dashboard.php");
 } 
-?>
-<?php
-require('templates/parts/footer.php');
 ?>

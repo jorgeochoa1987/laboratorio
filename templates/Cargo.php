@@ -1,12 +1,8 @@
-<?php
- // start a session
- session_start();
- ?>
- 
+
 
 <input id="cargoname" type="text" placeholder="cargo" required>
 <input type="submit" id="guardar" value="Guardar">
-<input value=<?php echo  $_SESSION ['username'] ?> id="usuario"  hidden>
+<input value="Adminsitrador" id="usuario"  hidden>
 <div id="resultado"></div> 
 
 

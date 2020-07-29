@@ -2,7 +2,6 @@
 require('../templates/parts/header.php');
 ?>
 
-
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
@@ -113,12 +112,12 @@ require('../templates/parts/header.php');
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
                                 <li>
-                                    <a href="usuario_l.php" class="mm-active">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                    <a href="?p=usuario_l" class="mm-active">
+                                        <i class="<?php echo $pagina =='usuario_l'?>metismenu-icon pe-7s-rocket"></i>
                                         Usuarios
                                     </a>
-                                    <a href="cargolist.php" class="mm-active">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                    <a href="?p=cargolist" class="mm-active">
+                                        <i class="<?php echo $pagina =='cargo_list'?> metismenu-icon pe-7s-rocket"></i>
                                         Cargos
                                     </a>
                                 </li>
@@ -126,10 +125,20 @@ require('../templates/parts/header.php');
                         </div>
                     </div>
                 </div>   
-             <div class="app-main__outer"></div>
+             <div class="app-main__outer">
+              <?php 
+              $pagina =isset($_GET['p'])? strtolower($_GET['p']):'principal';
+
+              require ($pagina.'.php');
+              ?>
+             </div>
         </div>
     </div>
-<?php
+
+
+
+
+<?php 
 require('../templates/parts/footer.php');
 ?>
 
