@@ -16,7 +16,6 @@ if ($datos == 0) {
 }else {
     $iduser = $datos['nombre'];
     }
-
  ?>
 
 

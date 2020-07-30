@@ -1,7 +1,6 @@
 <?php
     require('../modulos/cnx.php');
-    $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `usuario` FROM `usuarios`" ;
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +29,11 @@
                </head>
                <body>
 <?php 
+         $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `usuario` FROM `usuarios`" ;
          $resultado = mysqli_query($conexion,$usuario);
           while ($row = mysqli_fetch_assoc( $resultado))  {?>
 
-               <tr>                  
+                             
                <tr>
                <td><?php echo $row['id'] ?></td>";
                <td><?php echo $row['identicacion'] ?></td>";
@@ -42,8 +42,9 @@
                <td><?php echo $row['correo'] ?></td>";
                <td><?php echo $row['idCargo'] ?></td>";
                <td><?php echo $row['usuario'] ?></td>";
-               <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> </td>";
-               <td> <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
+               <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
+               <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button>
+               </td>";
                </tr>
 <?php }?>
               
@@ -58,12 +59,11 @@
     function Editar(id) {
      console.log(id);
        window.location = "?p=Cargomodificar?id="+id;
-       console.log("ingresé");
+       //console.log("ingresé");
     }
     function Eliminar(id) {
        window.location = "cargomodificar.php?parametro="+id;
     }
-
      </script>
 </body>
 </html>

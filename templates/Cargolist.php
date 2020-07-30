@@ -1,6 +1,5 @@
 <?php
     require('../modulos/cnx.php');
-    $usuario = "SELECT `id`, `nombre`, `crea`, `modifica`, `creaFecha`, `modificaFecha` FROM `Cargos`";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +23,15 @@
                </head>
                <body>
 <?php 
+         $usuario = "SELECT `id`, `nombre`, `crea`, `modifica`, `creaFecha`, `modificaFecha` FROM `Cargos`";
          $resultado = mysqli_query($conexion,$usuario);
           while ($row = mysqli_fetch_assoc( $resultado))  {?>
 
                <tr>                  
-               <tr>
                 <td><?php echo $row['id'] ?></td>";
                <td><?php echo $row['nombre'] ?></td>";
-               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> </td>";
-               <td> <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
+               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button>;
+               <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
                </tr>
 <?php }?>
               
@@ -43,10 +42,8 @@
 
      </table>
      <script>
-    function Editar(id) {
-     console.log(id);
+    function Editar(id) { 
        window.location = "?p=Cargomodificar?id="+id;
-       console.log("ingresé");
     }
     function Eliminar(id) {
        window.location = "cargomodificar.php?parametro="+id;

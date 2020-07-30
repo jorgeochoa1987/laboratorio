@@ -112,13 +112,17 @@ require('../templates/parts/header.php');
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
                                 <li>
-                                    <a href="?p=usuariolist" class="mm-active">
-                                        <i class="<?php echo $pagina =='usuariolist'?>metismenu-icon pe-7s-rocket"></i>
-                                        Usuarios
+                                    <a href="?p=modulo" class="mm-active">
+                                        <i class="<?php echo $pagina =='modulo'?> metismenu-icon pe-7s-rocket"></i>
+                                        Modulos
                                     </a>
                                     <a href="?p=cargolist" class="mm-active">
                                         <i class="<?php echo $pagina =='cargo_list'?> metismenu-icon pe-7s-rocket"></i>
                                         Cargos
+                                    </a>
+                                    <a href="?p=usuariolist" class="mm-active">
+                                        <i class="<?php echo $pagina =='usuariolist'?>metismenu-icon pe-7s-rocket"></i>
+                                        Usuarios
                                     </a>
                                 </li>
                             </ul>
