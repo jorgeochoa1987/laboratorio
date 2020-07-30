@@ -1,5 +1,4 @@
 <?php
- // start a session
  session_start();
  require('../modulos/cnx.php');
 

@@ -24,7 +24,7 @@
                   <th>Correo</th>
                   <th>Cargo</th>
                   <th>Usuario</th>
-                  <th>Acción</th>
+                  <th>Acciónes</th>
                </tr>
                </head>
                <body>
