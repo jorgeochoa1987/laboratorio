@@ -17,16 +17,22 @@ if ($datos == 0) {
     }
  ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTUALIZAR USUARIO</title>
+    <title>Actualizar cargo</title>
 </head>
 <body>
-<input id="cargoname" type="text" placeholder="cargo" value= <?php echo $iduser; ?> required>
-<input type="submit" id="guardar" value="Guardar">
+<div class="card-body"><h5 class="card-title">Modificación de cargos</h5>
+                <form class="">
+                    <div class="position-relative form-group"><label for="cargo" class="">Cargo</label>
+                        <input id="cargo" type="text" placeholder="Cargo" required class="form-control"  value= <?php echo $iduser; ?> ></div>
+                    <div class="position-relative form-group"><label for="nombres" class="">Descripción</label>
+                        <input id="descripcion" type="text" placeholder="Descripción" required class="form-control"></div>
+                    <button class="mt-1 btn btn-primary" type="submit" id="guardar" value="Guardar">Guardar</button>
+                </form>
+</div>
 </body>
 </html>

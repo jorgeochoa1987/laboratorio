@@ -35,16 +35,16 @@
 
                              
                <tr>
-               <td><?php echo $row['id'] ?></td>";
-               <td><?php echo $row['identicacion'] ?></td>";
-               <td><?php echo $row['nombres'] ?></td>";
-               <td><?php echo $row['apellidos'] ?></td>";
-               <td><?php echo $row['correo'] ?></td>";
-               <td><?php echo $row['idCargo'] ?></td>";
-               <td><?php echo $row['usuario'] ?></td>";
+               <td><?php echo $row['id'] ?></td>
+               <td><?php echo $row['identicacion'] ?></td>
+               <td><?php echo $row['nombres'] ?></td>
+               <td><?php echo $row['apellidos'] ?></td>
+               <td><?php echo $row['correo'] ?></td>
+               <td><?php echo $row['idCargo'] ?></td>
+               <td><?php echo $row['usuario'] ?></td>
                <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
                <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button>
-               </td>";
+               </td>
                </tr>
 <?php }?>
               
@@ -57,9 +57,8 @@
      </table>
      <script>
     function Editar(id) {
-     console.log(id);
        window.location = "?p=Cargomodificar?id="+id;
-       //console.log("ingresé");
+       
     }
     function Eliminar(id) {
        window.location = "cargomodificar.php?parametro="+id;

@@ -29,11 +29,11 @@
           while ($row = mysqli_fetch_assoc( $resultado))  {?>
 
                <tr>                  
-                <td><?php echo $row['id'] ?></td>";
-               <td><?php echo $row['nombre'] ?></td>";
-               <td><?php echo $row['descripcion'] ?></td>";
+                <td><?php echo $row['id'] ?></td>
+               <td><?php echo $row['nombre'] ?></td>
+               <td><?php echo $row['descripcion'] ?></td>
                <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button>
-               <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>";
+               <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>
                </tr>
 <?php }?>
               
