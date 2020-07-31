@@ -29,18 +29,18 @@
                </head>
                <body>
 <?php 
-         $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `usuario` FROM `usuarios`" ;
+         $usuario = "SELECT u.id,u.identificacion,u.nombres,u.apellidos,u.correo,c.nombre,u.usuario FROM usuarios u INNER JOIN Cargos c ON u.idCargo = c.id " ;
          $resultado = mysqli_query($conexion,$usuario);
           while ($row = mysqli_fetch_assoc( $resultado))  {?>
 
                              
                <tr>
                <td><?php echo $row['id'] ?></td>
-               <td><?php echo $row['identicacion'] ?></td>
+               <td><?php echo $row['identificacion'] ?></td>
                <td><?php echo $row['nombres'] ?></td>
                <td><?php echo $row['apellidos'] ?></td>
                <td><?php echo $row['correo'] ?></td>
-               <td><?php echo $row['idCargo'] ?></td>
+               <td><?php echo $row['nombre'] ?></td>
                <td><?php echo $row['usuario'] ?></td>
                <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
                <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button>
@@ -61,6 +61,7 @@
        
     }
     function Eliminar(id) {
+       
        window.location = "cargomodificar.php?parametro="+id;
     }
      </script>

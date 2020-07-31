@@ -18,19 +18,21 @@
                <tr>
                   <th>Id</th>
                   <th>Cargo</th>
+                  <th>Descripción</th>
                   <th>Acciónes</th>
                </tr>
                </head>
                <body>
 <?php 
-         $usuario = "SELECT `id`, `nombre`, `crea`, `modifica`, `creaFecha`, `modificaFecha` FROM `Cargos`";
+         $usuario = "SELECT `id`, `nombre`, `crea`, `modifica`, `creaFecha`, `modificaFecha`, `descripcion` FROM `Cargos`";
          $resultado = mysqli_query($conexion,$usuario);
           while ($row = mysqli_fetch_assoc( $resultado))  {?>
 
                <tr>                  
-                <td><?php echo $row['id'] ?></td>
+               <td><?php echo $row['id'] ?></td>
                <td><?php echo $row['nombre'] ?></td>
-               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button>
+               <td><?php echo $row['descripcion'] ?></td>
+               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
                <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>
                </tr>
 <?php }?>
@@ -46,7 +48,7 @@
        window.location = "?p=Cargomodificar?id="+id;
     }
     function Eliminar(id) {
-       window.location = "cargoeliminar.php?parametro="+id;
+       window.location = "?p=Cargoeliminar.php?id="+id;
     }
 
      </script>
