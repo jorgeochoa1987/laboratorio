@@ -12,7 +12,7 @@
 <div class="main-card mb-3 card">
       <div class="card-body"><h5 class="card-title">Listado de cargos</h5>
       <br> 
-         <a href="?p=cargo" >Nuevo</a>
+         <a class="mb-2 mr-2 btn btn-info" href="?p=cargo" >Nuevo Cargo</a>
             <table class="mb-0 table">
                <head>
                <tr>
@@ -30,8 +30,8 @@
                <tr>                  
                 <td><?php echo $row['id'] ?></td>
                <td><?php echo $row['nombre'] ?></td>
-               <td> <button onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button>
-               <button onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>
+               <td> <button  class="mb-2 mr-2 btn btn-primary" onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button>
+               <button class="mb-2 mr-2 btn btn-danger" onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button> </td>
                </tr>
 <?php }?>
               
@@ -41,15 +41,7 @@
 </div>
 
      </table>
-     <script>
-    function Editar(id) { 
-       window.location = "?p=Cargomodificar?id="+id;
-    }
-    function Eliminar(id) {
-       window.location = "cargoeliminar.php?parametro="+id;
-    }
 
-     </script>
 </body>
 </html>
 
