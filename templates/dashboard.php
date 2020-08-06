@@ -120,7 +120,7 @@ require('../templates/parts/header.php');
                                         <i class="fa fa-briefcase"></i>
                                         Cargos
                                     </a>
-                                    <a href="?p=usuariolist" class="mm-active">
+                                    <a href="?p=usuario" class="mm-active">
                                         <i class="fa fa-address-book"></i>
                                         Usuarios
                                     </a>
