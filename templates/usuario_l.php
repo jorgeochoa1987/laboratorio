@@ -1,3 +1,4 @@
+<!--formulario de registro al usuario -->
 <div class="card-body"><h5 class="card-title">Registro de usuarios</h5>
                 <form class="">
                     <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
@@ -15,7 +16,6 @@
                     <div class="position-relative form-group"><label for="cargo" class="">Contraseña</label>
                         <input  id="pass" type="password"  placeholder="Contraseña" required  class="form-control"></div>
 
-                    
                     <button class="mt-1 btn btn-primary" type="submit" id="guardar" value="Guardar">Guardar</button>
                 </form>
 </div>
