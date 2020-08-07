@@ -14,15 +14,14 @@
                   <th>Apellidos</th>
                   <th>Correo</th>
                   <th>Cargo</th>
-                  <th>Usuario</th>
                   <th>Acciónes</th>
                </tr>
                </head>
                <body>
                <?php  
-               $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `usuario` FROM `usuarios`" ;
+               $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo` FROM `usuarios`" ;
                $resultado = mysqli_query($conexion,$usuario);
-               echo $usuario;
+               //echo $usuario;
                 while ($row = mysqli_fetch_assoc( $resultado))  {?>                             
                   <tr>
                   <td><?php echo $row['id'] ?></td>
@@ -31,7 +30,6 @@
                   <td><?php echo $row['apellidos'] ?></td>
                   <td><?php echo $row['correo'] ?></td>
                   <td><?php echo $row['idCargo'] ?></td>
-                  <td><?php echo $row['usuario'] ?></td>
                   <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
                   <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button>
                   </td>
@@ -58,30 +56,29 @@
       <div class="modal-body">
       <form class="">
                     <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
-                        <input id="id_user" type="number" placeholder="identificación" required class="form-control"></div>
+                        <input id="txt-id" type="number" placeholder="identificación" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="nombres" class="">Nombres</label>
-                        <input id="nombres" type="text" placeholder="Nombre" required class="form-control"></div>
+                        <input id="txt-nombre" type="text" placeholder="Nombre" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="apellidos" class="">Apellidos</label>
-                        <input  id="apellidos" type="text" placeholder="Apellidos" required class="form-control"></div>
-                    <div class="position-relative form-group"><label for="cargo" class="">Correo</label>
-                        <input  id="correo" type="text" placeholder="Correo"  class="form-control"></div>
+                        <input  id="txt-apellido" type="text" placeholder="Apellidos" required class="form-control"></div>
+                    <div class="position-relative form-group"><label for="correo" class="">Correo</label>
+                        <input  id="txt-correo" type="text" placeholder="Correo"  class="form-control"></div>
                     <div class="position-relative form-group"><label for="cargo" class="">Cargo</label>
-                        <input  id="cargo" type="text" placeholder="Cargo" required class="form-control"></div> 
-                    <div class="position-relative form-group"><label for="cargo" class="">Usuario</label>
-                        <input  id="usuario" type="text" placeholder="Usuario" class="form-control"></div>
-                    <div class="position-relative form-group"><label for="cargo" class="">Contraseña</label>
-                        <input  id="pass" type="password"  placeholder="Contraseña" required  class="form-control"></div>
+                        <input  id="txt-cargo" type="text" placeholder="Cargo" required class="form-control"></div> 
+                    <div class="position-relative form-group"><label for="contrasena" class="">Contraseña</label>
+                        <input  id="txt-pass" type="password"  placeholder="Contraseña" required  class="form-control"></div>
 
                     
                 </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button class="mt-1 btn btn-primary" type="submit" id="guardar" value="Guardar">Guardar</button>
+        <button type="button" class="btn btn-secondary" id="btn-cerrar" data-dismiss="modal">Cerrar</button>
+        <button class="mt-1 btn btn-primary" type="submit" id="btn-guardar" value="Guardar">Guardar</button>
       </div>
     </div>
   </div>
+  <script src="../js/usuarios.js"></script>
 </div>
- 
+
 
 
