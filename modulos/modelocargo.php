@@ -28,4 +28,30 @@ if (isset($_POST['accion']))
 	  }
         }
   }
+
+  if (isset($_POST['accion'])) 
+	{
+	if ($_POST['accion'] == 'eliminarCargo') 
+		{
+        $idcargo = $_POST['idcargo'];
+		
+    	if($idcargo =='' )
+    {
+      echo '<div class="comment_box" id="Respuesta"> Para eliminar se requiere un id de cargo </div>';
+      exit();
+    }
+	
+	$sql = "DELETE FROM `Cargos` WHERE id =$idcargo";
+	  $resultado = mysqli_query($conexion, $sql );
+
+	  	if ($resultado)
+	  {
+		echo("1");
+	  }
+	  	else
+	  {
+		echo($sql);  
+	  }
+        }
+  }
   ?>

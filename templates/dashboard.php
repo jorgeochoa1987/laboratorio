@@ -113,15 +113,15 @@ require('../templates/parts/header.php');
                                 <li class="app-sidebar__heading">Opciones</li>
                                 <li>
                                     <a href="?p=modulolist" class="mm-active">
-                                        <i class="<?php echo $pagina =='modulolist'?> metismenu-icon pe-7s-rocket"></i>
+                                        <i class="fa fa-book"></i>
                                         Modulos
                                     </a>
                                     <a href="?p=cargolist" class="mm-active">
-                                        <i class="<?php echo $pagina =='cargo_list'?> metismenu-icon pe-7s-rocket"></i>
+                                        <i class="fa fa-briefcase"></i>
                                         Cargos
                                     </a>
-                                    <a href="?p=usuariolist" class="mm-active">
-                                        <i class="<?php echo $pagina =='usuariolist'?>metismenu-icon pe-7s-rocket"></i>
+                                    <a href="?p=usuario" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
                                         Usuarios
                                     </a>
                                 </li>

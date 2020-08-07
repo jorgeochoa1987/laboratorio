@@ -1,5 +1,4 @@
 <?php
- session_start();
  require('../modulos/cnx.php');
 
 if(empty($_GET['id']))
