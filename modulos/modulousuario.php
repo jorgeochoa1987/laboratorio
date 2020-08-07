@@ -4,25 +4,17 @@ require('../modulos/cnx.php');
 
 if (isset($_POST['accion'])) 
 	{
-	if ($_POST['accion'] == 'guardarinformacionusuarios') 
+	if ($_POST['accion'] == 'guardar') 
 		{
-        $identificacion = $_POST['idusuario'];
-		$nombres = $_POST['nombresusuario'];
-		$apellidos = $_POST['apellidosusuario'];
-		$correo = $_POST['correousuario'];
-		$cargo = $_POST['cargousuario'];
-		$user = $_POST['usuariousuario'];
-		$pass = $_POST['passusuario'];
-		$crea = $_POST['creausuario'];
+        $identificacion = $_POST['identificacion'];
+		$nombres = $_POST['nombres'];
+		$apellidos = $_POST['apellidos'];
+		$correo = $_POST['correo'];
+		$cargo = $_POST['idcargo'];
+		$pass = $_POST['clave'];
 		
-
-    	if($identificacion =='' or $nombres =='' or $apellidos =='' or $correo =='' or $cargo ==''or $user =='' or  $pass =='')
-    {
-      echo '<div class="comment_box" id="Respuesta"> Tiene  campos obligatorios vacios </div>';
-      exit();
-    }
 	
-	  $sql = "INSERT INTO `usuarios`( `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `crea`, `clave`, `usuario`) VALUES ('$identificacion','$nombres','$apellidos','$correo','$cargo','$crea','$pass','$user')";
+	  $sql = "INSERT INTO `usuarios`( `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo`, `clave`) VALUES ('$identificacion','$nombres','$apellidos','$correo','$cargo','$pass')";
 
 	  $resultado = mysqli_query($conexion, $sql );
 
