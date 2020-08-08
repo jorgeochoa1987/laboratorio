@@ -50,4 +50,32 @@ if (isset($_POST['accion']))
 	  }
         }
   }
+
+  if (isset($_POST['accion'])) 
+  {
+  if ($_POST['accion'] == 'consultar') 
+	  {
+	  $ID = $_POST['ide'];	
+  
+	  $sql = "select * FROM usuarios WHERE identificacion='".$ID."'";
+
+		  
+		$result = $conexion->query($sql);
+                              
+		if ($result->num_rows > 0) {
+		  // output data of each row
+		  while($row = $result->fetch_assoc()) {
+			?>
+			   <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
+                        <input id="txt-id" type="number" placeholder="identificación" required class="form-control" value=<?php echo $row["identificacion"] ?>></div>
+                    <div class="position-relative form-group"><label for="nombres" class="">Nombres</label>
+                        <input id="txt-nombre" type="text" placeholder="Nombre" required class="form-control" value="<?php echo $row["nombres"] ?>"></div>
+		<?php  }
+		} else { ?>
+		   <option value="0">No cargo</option>
+
+		<?php } 
+		
+	  }
+}
   ?>

@@ -4,7 +4,7 @@ const eliminar = '#btn-eliminar'
 
 function inicioUsuario() {
     $('#btn-guardar').click(guardar)
-    $('#btn-editar').click(editar)
+   // $('#btn-editar').click(editar)
     $('#btn-eliminar').click(eliminar)
 }
 
@@ -39,9 +39,10 @@ function guardar(){
     $("#resultado").html(echo);
      if(echo==1)
      {
-        alert('Registro guardado exitosamente');
-        document.getElementById("exampleModal").style.display = "none";    
-     }
+         swal('Registro guardado exitosamente'+ identificacion, "¡ Listo !");
+        document.getElementById("exampleModal").style.display = "none"; 
+        //===============falta agregar el usuario sin refrescar la página ==================
+    } 
      else
      {
          alert('Verifica nuevamente la información'+echo );
@@ -86,5 +87,27 @@ function Eliminaruser(id)
 }
 
 
+function subireditar(id)
+{   var ide = id;
+    $.ajax({ 
+        url: '../modulos/modulousuario.php',  // esto es una función 
+        type: 'POST', 
+        data: {
+        'accion':'consultar',  
+        'ide': ide,
+        
+        },
+    }).done(function(echo){
+    $("#resultado").html(echo);
+     if(echo==1)
+     {
+         swal('Registro guardado exitosamente'+ echo, "¡ Listo !");
+        //===============falta agregar el usuario sin refrescar la página ==================
+    } 
+     else
+     {
+         alert('Verifica nuevamente la información'+echo );
+     }
+}
 
-
+)};
