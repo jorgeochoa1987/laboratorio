@@ -66,10 +66,14 @@ if (isset($_POST['accion']))
 		  // output data of each row
 		  while($row = $result->fetch_assoc()) {
 			?>
-			   <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
-                        <input id="txt-id" type="number" placeholder="identificación" required class="form-control" value=<?php echo $row["identificacion"] ?>></div>
-                    <div class="position-relative form-group"><label for="nombres" class="">Nombres</label>
-                        <input id="txt-nombre" type="text" placeholder="Nombre" required class="form-control" value="<?php echo $row["nombres"] ?>"></div>
+			   <?php echo $row["identificacion"] ?>
+			   <?php echo $row["nombres"] ?>
+			   <?php echo $row["apellidos"] ?>
+			   <?php echo $row["correo"] ?>
+			   <?php echo $row["idCargo"] ?>
+			   <?php echo $row["id"] ?>
+			   <?php echo $row["clave"] ?>
+
 		<?php  }
 		} else { ?>
 		   <option value="0">No cargo</option>

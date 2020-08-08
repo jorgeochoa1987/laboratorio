@@ -99,15 +99,10 @@ function subireditar(id)
         },
     }).done(function(echo){
     $("#resultado").html(echo);
-     if(echo==1)
-     {
-         swal('Registro guardado exitosamente'+ echo, "¡ Listo !");
+    $('#modaleditar').modal('show'); 
+       //  swal('Registro guardado exitosamente'+ echo, "¡ Listo !");
         //===============falta agregar el usuario sin refrescar la página ==================
-    } 
-     else
-     {
-         alert('Verifica nuevamente la información'+echo );
-     }
+   
 }
 
 )};
