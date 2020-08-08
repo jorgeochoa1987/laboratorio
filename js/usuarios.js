@@ -10,7 +10,6 @@ function inicioUsuario() {
 
 
 function guardar(){
- 
    const identificacion = $('#txt-id').val()
    const nombre = $('#txt-nombre').val().toUpperCase()
    const apellido = $('#txt-apellido').val().toUpperCase()
@@ -41,9 +40,7 @@ function guardar(){
      if(echo==1)
      {
         alert('Registro guardado exitosamente');
-        limpiar()
-        cerrarmodal()
-       
+        document.getElementById("exampleModal").style.display = "none";    
      }
      else
      {
@@ -54,30 +51,24 @@ function guardar(){
 );
 }
 
-function limpiar() {
-   $('.form-control').val('')
-}
-function cerrarmodal() {
-   $('.modal fade').modal(toggle)
-}
-function eliminar(eliminar) {
-    
+
+function eliminarusuario(id){
+    identificacion = id;
     $.ajax({ 
         url: '../modulos/modulousuario.php',  // esto es una función 
         type: 'POST', 
         data: {
         'accion':'eliminar',  
         'save':1,
-        'Id': identificacion
+        'identificacion': identificacion,
+     
         },
     }).done(function(echo){
     $("#resultado").html(echo);
      if(echo==1)
      {
-        alert('Registro eliminado exitosamente');
-        limpiar()
-        cerrarmodal()
-       
+        alert('Registro eliminado  exitosamente');
+       // document.getElementById("exampleModal").style.display = "none";    
      }
      else
      {
@@ -87,4 +78,7 @@ function eliminar(eliminar) {
 
 );
 }
+
+
+
 

@@ -25,14 +25,14 @@
                 while ($row = mysqli_fetch_assoc( $resultado))  {?>                             
                   <tr>
                   <td><?php echo $row['id'] ?></td>
-                  <td><?php echo $row['identicacion'] ?></td>
-                  <td><?php echo $row['nombres'] ?></td>
+                  <td><?php echo $row['identificacion'] ?></td>
+                  <td><?php echo $row['nombres'] ?></td> 
                   <td><?php echo $row['apellidos'] ?></td>
                   <td><?php echo $row['correo'] ?></td>
                   <td><?php echo $row['idCargo'] ?></td>
                   <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
-                  <button  onclick="Eliminar(<?php echo $row['id']; ?>) " >Eliminar </button>
-                  </td>
+                  <button  onclick="eliminarusuario(<?php echo $row['identificacion']; ?>) " >Eliminar </button>
+                  </td> 
                   </tr>
                <?php }?>
                </body>
@@ -77,7 +77,6 @@
       </div>
     </div>
   </div>
-  <script src="../js/usuarios.js"></script>
 </div>
 
 

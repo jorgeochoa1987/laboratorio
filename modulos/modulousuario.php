@@ -34,9 +34,9 @@ if (isset($_POST['accion']))
 	{
 	if ($_POST['accion'] == 'eliminar') 
 		{
-        $ID = $_POST['Id'];	
+        $ID = $_POST['identificacion'];	
 	
-		$sql = "DELETE FROM usuarios WHERE Id='".$ID."'";
+		$sql = "DELETE FROM usuarios WHERE identificacion='".$ID."'";
 
 	  $resultado = mysqli_query($conexion, $sql );
 
