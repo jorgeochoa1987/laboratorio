@@ -106,3 +106,48 @@ function subireditar(id)
 }
 
 )};
+
+function editarUsuario(ide){
+    var ide =ide
+    const identificacion = $('#txt-idup').val()
+    const nombre = $('#txt-nombreup').val().toUpperCase()
+    const apellido = $('#txt-apellidoup').val().toUpperCase()
+    const correo = $('#txt-correoup').val().toUpperCase()
+    const cargo = $('#txt-cargoup').val().toUpperCase()
+    const pass = $('#txt-passup').val()
+
+     if (identificacion === '' || nombre === '' || apellido === '' || correo === '' || cargo === '' ||  pass === '' ) {
+         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
+         return
+     }
+ 
+     $.ajax({ 
+         url: '../modulos/modulousuario.php',  // esto es una función 
+         type: 'POST', 
+         data: {
+         'accion':'actualizar',  
+         'save':1,
+         'ide':ide,
+         'identificacion': identificacion,
+         'nombres':nombre,
+         'apellidos':apellido,
+         'correo':correo,
+         'idcargo':cargo,
+         'clave':pass
+         },
+     }).done(function(echo){
+     $("#resultado").html(echo);
+      if(echo==1)
+      {
+          swal('Registro se actualizó exitosamente'+ identificacion, "¡ Listo !");
+         document.getElementById("exampleModal").style.display = "none"; 
+         //===============falta agregar el usuario sin refrescar la página ==================
+     } 
+      else
+      {
+          alert('Verifica nuevamente la información'+echo );
+      }
+ }
+ 
+ );
+ }

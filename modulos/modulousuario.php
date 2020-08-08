@@ -28,7 +28,33 @@ if (isset($_POST['accion']))
 	  }
         }
   }
+  if (isset($_POST['accion'])) 
+  {
+  if ($_POST['accion'] == 'actualizar') 
+	  {
+	  $ide  = $_POST['ide'];
+	  $identificacion = $_POST['identificacion'];
+	  $nombres = $_POST['nombres'];
+	  $apellidos = $_POST['apellidos'];
+	  $correo = $_POST['correo'];
+	  $cargo = $_POST['idcargo'];
+	  $pass = $_POST['clave'];
+	
+  
+	$sql = "UPDATE `usuarios` SET `identificacion` = '$ide', `nombres` = '$nombres', `apellidos` = '$apellidos', `correo` = '$correo', `idCargo` = '$cargo', `clave` = '$pass' WHERE `identificacion` = $ide";
 
+	$resultado = mysqli_query($conexion, $sql );
+
+		if ($resultado)
+	{
+	  echo("1");
+	}
+		else
+	{
+	  echo($sql);  
+	}
+	  }
+}
   
   if (isset($_POST['accion'])) 
 	{
@@ -68,17 +94,16 @@ if (isset($_POST['accion']))
 			?>
 			  <form class="">
                     <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
-					<input id="txt-ide" type="number" placeholder="identificación" value="<?php echo $row["id"] ?>"  class="form-control" hidden></div>
 
-                        <input id="txt-id" type="number" placeholder="identificación" value="<?php echo $row["identificacion"] ?>" required class="form-control"></div>
+                        <input id="txt-idup" type="number" placeholder="identificación" value="<?php echo $row["identificacion"] ?>" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="nombres" class="">Nombres</label>
-                        <input id="txt-nombre" type="text" placeholder="Nombre" value=" <?php echo $row["nombres"] ?>" required class="form-control"></div>
+                        <input id="txt-nombreup" type="text" placeholder="Nombre" value=" <?php echo $row["nombres"] ?>" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="apellidos"  class="">Apellidos</label>
-                        <input  id="txt-apellido" type="text" placeholder="Apellidos" value="<?php echo $row["apellidos"] ?>" required class="form-control"></div>
+                        <input  id="txt-apellidoup" type="text" placeholder="Apellidos" value="<?php echo $row["apellidos"] ?>" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="correo" class="">Correo</label>
-                        <input  id="txt-correo" type="text" placeholder="Correo"  value="<?php echo $row["correo"] ?>" class="form-control"></div>
+                        <input  id="txt-correoup" type="text" placeholder="Correo"  value="<?php echo $row["correo"] ?>" class="form-control"></div>
                     <div class="position-relative form-group"><label for="cargo" class="">Cargo</label>
-                        <select id="txt-cargo" type="text"   placeholder="Cargo" required class="form-control">
+                        <select id="txt-cargoup" type="text"   placeholder="Cargo" required class="form-control">
 						<option value="<?php echo $row["idCargo"] ?>"> <?php echo $row["cargo"] ?></option>
 
 							 <?php 
@@ -103,17 +128,17 @@ if (isset($_POST['accion']))
                           </select>     
                        </div> 
                     <div class="position-relative form-group"><label for="contrasena" class="">Contraseña </label> 
-                        <input  id="txt-pass" type="password"  value="<?php echo $row["clave"] ?>" placeholder="Contraseña"  class="form-control"></div>
+                        <input  id="txt-passup" type="password"  value="<?php echo $row["clave"] ?>" placeholder="Contraseña"  class="form-control"></div>
 
                     
                 </form>
-      </div>
+      </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" id="btn-cerrar" data-dismiss="modal">Cerrar</button>
-        <button class="mt-1 btn btn-primary" type="submit" id="editarUsuario" value="actualizar">Actualizar</button>
+        <button class="mt-1 btn btn-primary" type="submit" onClick="editarUsuario(<?php echo $row["identificacion"] ?>)" value="actualizar">Actualizar</button>
       </div>
 			    
-			   
+			    
 
 		<?php  }
 		} else { ?>
