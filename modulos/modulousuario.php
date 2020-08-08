@@ -110,7 +110,7 @@ if (isset($_POST['accion']))
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" id="btn-cerrar" data-dismiss="modal">Cerrar</button>
-        <button class="mt-1 btn btn-primary" type="submit" id="btn-guardar" value="Guardar">Actualizar</button>
+        <button class="mt-1 btn btn-primary" type="submit" id="editarUsuario" value="actualizar">Actualizar</button>
       </div>
 			    
 			   
