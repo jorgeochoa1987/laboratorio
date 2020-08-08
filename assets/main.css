@@ -9046,7 +9046,7 @@ button,
 .app-sidebar {
     width: 280px;
     display: flex;
-    z-index: 11;
+     z-index: 9; 
     overflow: hidden;
     min-width: 280px;
     position: relative;
@@ -20404,5 +20404,13 @@ a.fc-more:hover {
  
 @media (min-width: 576px){
 .modal-dialog {
-    margin: 10.75rem auto !important;
+    margin:3.75rem auto !important
 }}
+
+.modal-open .modal {
+    background-color: rgba(0,0,0,0.4) !important; 
+}
+.fixed-sidebar .app-main .app-main__outer {
+    z-index: 8!important; 
+  
+}

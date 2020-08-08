@@ -30,10 +30,10 @@
                   <td><?php echo $row['apellidos'] ?></td>
                   <td><?php echo $row['correo'] ?></td>
                   <td><?php echo $row['idCargo'] ?></td>
-                  <td> <button  class="btn btn-info"  data-toggle="modal"    onclick="subireditar(<?php echo $row['identificacion'] ?>)"> Editar </button> 
+                  <td> <button  class="btn btn-info"   data-toggle="modal" data-target="#modaleditar" onclick="subireditar(<?php echo $row['identificacion'] ?>)"> Editar </button> 
                   <button   class="btn btn-danger"  onclick="Eliminaruser(<?php echo $row['identificacion'];?>)">Eliminar </button>
                   </td> 
-                  </tr>
+                  </tr> 
                <?php }?> 
                   <td class="nuevos"></td>
 
@@ -100,14 +100,15 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
 <!--Modal editar-->
-  <!--modal -->
-  <div class="modal fade" id="modaleditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 
+ <!--modal -->
+ <div class="modal fade" id="modaleditar" tabindex="-1" role="dialog" aria-labelledby="labeleditar" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+        <h5 class="modal-title" id="labeleditar">Editar usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
