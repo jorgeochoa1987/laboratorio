@@ -1,7 +1,7 @@
 <?php
     require('../modulos/cnx.php');?>
 
-<div class="main-card mb-3 card">
+<div class="main-card mb-3 card" id="cuerpo">
       <div class="card-body"><h5 class="card-title">Listado de usuarios</h5>
             <br> 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo usuario</button>

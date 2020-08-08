@@ -1,7 +1,11 @@
 $(document).ready(inicioUsuario)
 
+const eliminar = '#btn-eliminar'
+
 function inicioUsuario() {
     $('#btn-guardar').click(guardar)
+    $('#btn-editar').click(editar)
+    $('#btn-eliminar').click(eliminar)
 }
 
 
@@ -55,5 +59,32 @@ function limpiar() {
 }
 function cerrarmodal() {
    $('.modal fade').modal(toggle)
+}
+function eliminar(eliminar) {
+    
+    $.ajax({ 
+        url: '../modulos/modulousuario.php',  // esto es una función 
+        type: 'POST', 
+        data: {
+        'accion':'eliminar',  
+        'save':1,
+        'Id': identificacion
+        },
+    }).done(function(echo){
+    $("#resultado").html(echo);
+     if(echo==1)
+     {
+        alert('Registro eliminado exitosamente');
+        limpiar()
+        cerrarmodal()
+       
+     }
+     else
+     {
+         alert('Verifica nuevamente la información'+echo );
+     }
+}
+
+);
 }
 
