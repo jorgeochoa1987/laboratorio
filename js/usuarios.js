@@ -50,33 +50,39 @@ function guardar(){
 
 );
 }
+  
 
-
-function eliminarusuario(id){
+function Eliminaruser(id)
+{
     identificacion = id;
-    $.ajax({ 
-        url: '../modulos/modulousuario.php',  // esto es una función 
-        type: 'POST', 
-        data: {
-        'accion':'eliminar',  
-        'save':1,
-        'identificacion': identificacion,
-     
-        },
-    }).done(function(echo){
-    $("#resultado").html(echo);
-     if(echo==1)
-     {
-        alert('Registro eliminado  exitosamente');
-       // document.getElementById("exampleModal").style.display = "none";    
-     }
-     else
-     {
-         alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
+    swal({
+		title: "Borrar usuario",
+		text: "¿ Esta seguro que desea eliminar el usuario"+id+"?",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: '#DD6B55',
+		confirmButtonText: 'Si, Borrar',
+		cancelButtonText: "No, Cancelar!",
+		closeOnConfirm: false,
+		closeOnCancel: false
+	},
+	function(isConfirm){
+    if (isConfirm){
+        $.ajax({ 
+            url: '../modulos/modulousuario.php',  // esto es una función 
+            type: 'POST', 
+            data: {
+            'accion':'eliminar',  
+            'save':1,
+            'identificacion': identificacion,
+            },
+        }),
+      document.getElementById(identificacion).style.display = "none";    
+      swal("¡ Borrado !", "El usuario" + id +  "fue borrado", "success");
+    } else {
+      swal("Cancelado", "Se canceló la acción", "error");
+    }
+	});
 }
 
 

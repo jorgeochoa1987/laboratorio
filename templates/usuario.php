@@ -23,18 +23,20 @@
                $resultado = mysqli_query($conexion,$usuario);
                //echo $usuario;
                 while ($row = mysqli_fetch_assoc( $resultado))  {?>                             
-                  <tr>
+                  <tr id ="<?php echo $row['identificacion'] ?>">
                   <td><?php echo $row['id'] ?></td>
                   <td><?php echo $row['identificacion'] ?></td>
                   <td><?php echo $row['nombres'] ?></td> 
                   <td><?php echo $row['apellidos'] ?></td>
                   <td><?php echo $row['correo'] ?></td>
                   <td><?php echo $row['idCargo'] ?></td>
-                  <td> <button  onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
-                  <button  onclick="eliminarusuario(<?php echo $row['identificacion']; ?>) " >Eliminar </button>
+                  <td> <button  class="btn btn-info" onclick="Editar(<?php echo $row['id']; ?>)"> Editar </button> 
+                  <button   class="btn btn-danger"  onclick="Eliminaruser(<?php echo $row['identificacion'];?>)">Eliminar </button>
                   </td> 
                   </tr>
-               <?php }?>
+               <?php }?> 
+                  <td class="nuevos"></td>
+
                </body>
             </table>
       </div>
@@ -64,7 +66,28 @@
                     <div class="position-relative form-group"><label for="correo" class="">Correo</label>
                         <input  id="txt-correo" type="text" placeholder="Correo"  class="form-control"></div>
                     <div class="position-relative form-group"><label for="cargo" class="">Cargo</label>
-                        <input  id="txt-cargo" type="text" placeholder="Cargo" required class="form-control"></div> 
+                        <select id="txt-cargo" type="text" placeholder="Cargo" required class="form-control">
+                             <?php 
+
+                             $sql = "SELECT id,  FROM cargo";
+                             $result = $conexion->query($sql);
+                             
+                             if ($result->num_rows > 0) {
+                               // output data of each row
+                               while($row = $result->fetch_assoc()) {
+                                 ?>
+                                   <option value="<?php echo $row["id"] ?>"><?php echo $row["nombre"] ?></option>
+                             <?php  }
+                             } else { ?>
+                                <option value="0">No cargo</option>
+
+                             <?php } ?>
+                             
+                            
+                             
+                             
+                          </select>     
+                       </div> 
                     <div class="position-relative form-group"><label for="contrasena" class="">Contraseña</label>
                         <input  id="txt-pass" type="password"  placeholder="Contraseña" required  class="form-control"></div>
 
@@ -78,6 +101,5 @@
     </div>
   </div>
 </div>
-
 
 
