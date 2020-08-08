@@ -99,7 +99,7 @@ function subireditar(id)
         },
     }).done(function(echo){
     $("#resultado").html(echo);
-    $('#modaleditar').modal('show'); 
+    $('#modaleditar').modal('toggle'); 
        //  swal('Registro guardado exitosamente'+ echo, "¡ Listo !");
         //===============falta agregar el usuario sin refrescar la página ==================
    

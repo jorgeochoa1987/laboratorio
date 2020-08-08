@@ -113,48 +113,9 @@
         </button>
       </div>
       <div class="modal-body">
-      <form class="">
-                    <div class="position-relative form-group"><label for="id_user" class="">Identificación</label>
-                        <input id="txt-id" type="number" placeholder="identificación" required class="form-control"></div>
-                    <div class="position-relative form-group"><label for="nombres" class="">Nombres</label>
-                        <input id="txt-nombre" type="text" placeholder="Nombre" required class="form-control"></div>
-                    <div class="position-relative form-group"><label for="apellidos" class="">Apellidos</label>
-                        <input  id="txt-apellido" type="text" placeholder="Apellidos" required class="form-control"></div>
-                    <div class="position-relative form-group"><label for="correo" class="">Correo</label>
-                        <input  id="txt-correo" type="text" placeholder="Correo"  class="form-control"></div>
-                    <div class="position-relative form-group"><label for="cargo" class="">Cargo</label>
-                        <select id="txt-cargo" type="text" placeholder="Cargo" required class="form-control">
-                             <?php 
-
-                             $sql = "SELECT id, nombre FROM cargos";
-                             $result = $conexion->query($sql);
-                              
-                             if ($result->num_rows > 0) {
-                               // output data of each row
-                               while($row = $result->fetch_assoc()) {
-                                 ?>
-                                   <option value="<?php echo $row["id"] ?>"><?php echo $row["nombre"] ?></option>
-                             <?php  }
-                             } else { ?>
-                                <option value="0">No cargo</option>
-
-                             <?php } ?>
-                             
-                            
-                             
-                             
-                          </select>     
-                       </div> 
-                    <div class="position-relative form-group"><label for="contrasena" class="">Contraseña</label>
-                        <input  id="txt-pass" type="password"  placeholder="Contraseña" required  class="form-control"></div>
-
-                    
-                </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="btn-cerrar" data-dismiss="modal">Cerrar</button>
-        <button class="mt-1 btn btn-primary" type="submit" id="btn-guardar" value="Guardar">Guardar</button>
-      </div>
+      
+      <div id="resultado"></div> 
+     
     </div>
   </div>
 </div>
