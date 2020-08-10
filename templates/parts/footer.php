@@ -13,6 +13,8 @@
   <script type="text/javascript" src="../assets/scripts/main.js"></script>
   <script type="text/javascript" src="../js/mensajes.js"></script>
   <script type="text/javascript" src="../js/usuarios.js"></script>
+  <script type="text/javascript" src="../js/modulos.js"></script>
+  <script type="text/javascript" src="../js/cargos.js"></script>
  
 </body>
 </html>

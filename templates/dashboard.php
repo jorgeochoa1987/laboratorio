@@ -112,11 +112,11 @@ require('../templates/parts/header.php');
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
                                 <li>
-                                    <a href="?p=modulolist" class="mm-active">
+                                    <a href="?p=modulo" class="mm-active">
                                         <i class="fa fa-book"></i>
                                         Modulos
                                     </a>
-                                    <a href="?p=cargolist" class="mm-active">
+                                    <a href="?p=cargo" class="mm-active">
                                         <i class="fa fa-briefcase"></i>
                                         Cargos
                                     </a>

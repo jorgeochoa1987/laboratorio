@@ -1,51 +1,85 @@
 <?php
- // start a session
- session_start();
- ?>
+    require('../modulos/cnx.php');?>
+
+<div class="main-card mb-3 card" id="cuerpo">
+      <div class="card-body"><h5 class="card-title">Listado de módulos</h5>
+            <br> 
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo módulo</button>
+            <table class="mb-0 table" id="tablausuarios">
+               <head>
+               <tr>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+               </tr>
+               </head>
+               <body>
+               <?php  
+               $usuario = "SELECT `id`, `nombre`, `descripcion` FROM `modulos`" ;
+               $resultado = mysqli_query($conexion,$usuario);
+               //echo $usuario;
+                while ($row = mysqli_fetch_assoc( $resultado))  {?>                             
+                  <tr id ="<?php echo $row['id'] ?>">
+                  <td><?php echo $row['id'] ?></td>
+                  <td><?php echo $row['nombre'] ?></td>
+                  <td><?php echo $row['descripcion'] ?></td> 
+                  <td> <button  class="btn btn-info"   data-toggle="modal" data-target="#modaleditar" onclick="subireditarmodulo(<?php echo $row['id'] ?>)"> Editar </button> 
+                  <button   class="btn btn-danger"  onclick="eliminarmodulo(<?php echo $row['id'];?>)">Eliminar </button>
+                  </td> 
+                  </tr> 
+               <?php }?> 
+                  <td class="nuevos"></td>
+
+               </body>
+            </table>
+      </div>
+</div>
+
+     </table>
 
 
-<input id="moduloname" type="text" placeholder="modulo" required>
-<input id="modulodescripcion" type="text" placeholder="descripcion" required>
-<input type="submit" id="guardar" value="Guardar">
-
-    <div id="resultado"></div>
-
-
-    
-<!--===============================================================================================-->
-<script src="../js/librerias/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-
-
-
-<script>
-$("#guardar").on("click", function(){
+     <!--modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Módulo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form class="">
+                    <div class="position-relative form-group"><label for="nombre" class="">Nombre</label>
+                        <input id="txt-nombremodulo" type="text" placeholder="nombre" required class="form-control"></div>
+                    <div class="position-relative form-group"><label for="descripcion" class="">Descripción</label>
+                        <input id="txt-descripcionmodulo" type="text" placeholder="Descripcion" required class="form-control"></div>
+                    
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btn-cerrarmodulo" data-dismiss="modal">Cerrar</button>
+        <button class="mt-1 btn btn-primary" type="submit" id="btn-guardarmodulo" value="Guardar">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--Modal editar-->
  
-    var modulo = $("#moduloname").val();
-    var descripcion = $("#modulodescripcion").val();
-
-    $.ajax({ 
-        url: '../modulos/modelomodulo.php',  // esto es una función 
-        type: 'POST', 
-        data: {
-        'accion':'guardarmodulo',  
-        'save':1,
-        'enviomodulo': modulo,
-        'enviodescripcion':descripcion,
-        },
-    }).done(function(echo){
-    $("#resultado").html(echo);
-     if(echo==1)
-     {
-        alert('Registro guardado exitosamente');
-     }
-     else
-     {
-         alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
-});
-
-</script>    
+ <!--modal -->
+ <div class="modal fade" id="modaleditar" tabindex="-1" role="dialog" aria-labelledby="labeleditar" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labeleditar">Editar Módulo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+      <div id="resultado"></div> 
+     
+    </div>
+  </div>
+</div>
