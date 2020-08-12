@@ -124,6 +124,26 @@ require('../templates/parts/header.php');
                                         <i class="fa fa-address-book"></i>
                                         Usuarios
                                     </a>
+                                    <a href="?p=lugarmuestras" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Lugar Muestras
+                                    </a>
+                                    <a href="?p=tipomuestras" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Tipo Muestras
+                                    </a>
+                                    <a href="?p=tipomaterias" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Tipo Materias Primas
+                                    </a>
+                                    <a href="?p=tipoproductos" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Tipo Productos
+                                    </a>
+                                    <a href="?p=unidades" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Unidades
+                                    </a>
                                 </li>
                             </ul>
                         </div>
