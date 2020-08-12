@@ -19,6 +19,7 @@
   <script type="text/javascript" src="../js/tipomaterias.js"></script>
   <script type="text/javascript" src="../js/tipoproductos.js"></script>
   <script type="text/javascript" src="../js/unidades.js"></script>
+  <script type="text/javascript" src="../js/procedenciamaterias.js"></script>
  
 </body>
 </html>

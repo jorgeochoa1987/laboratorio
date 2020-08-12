@@ -144,6 +144,10 @@ require('../templates/parts/header.php');
                                         <i class="fa fa-address-book"></i>
                                         Unidades
                                     </a>
+                                    <a href="?p=procedenciamaterias" class="mm-active">
+                                        <i class="fa fa-address-book"></i>
+                                        Procedencia MP
+                                    </a>
                                 </li>
                             </ul>
                         </div>
