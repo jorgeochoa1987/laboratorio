@@ -112,12 +112,13 @@ require('../templates/parts/header.php');
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
 
-                               
                                 <li>
-                                <a href="?p=cliente" class="">
-                                        <i class="fa fa-address-book"></i>
-                                        Cliente
-                                    </a> 
+                                    <a href="?p=cliente" aria-expanded="false">
+                                        <i class="metismenu-icon fa fa-users"></i>Clientes
+                                    </a>
+                                </li>       
+                                <li>
+                              
                                     <a href="?p=lugarmuestras" class="mm-active">
                                         <i class="fa fa-address-book"></i>
                                         Lugar Muestras
@@ -139,14 +140,14 @@ require('../templates/parts/header.php');
                                 
 <li>
                         <a href="#" aria-expanded="false">
-                            <i class="metismenu-icon pe-7s-science"></i>Configuración
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                            <i class="metismenu-icon fa fa-cog"></i>Configuración
+                            <i class="metismenu-state-icon fa fa-caret-down caret-left"></i>
                         </a>
                                     <ul class="mm-collapse" style="">
                                 <li>
                                     <a href="#" aria-expanded="false">
-                                        <i class="metismenu-icon pe-7s-science"></i>Tipo de elementos
-                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                        <i class="metismenu-icon fa fa-flask"></i>Tipo de elementos
+                                        <i class="metismenu-state-icon fa fa-caret-down caret-left"></i>
                                     </a>
                                     <ul class="mm-collapse" style="">
                                         <li>
@@ -171,8 +172,8 @@ require('../templates/parts/header.php');
                                 </li>
                                 <li>
                                     <a href="#" aria-expanded="false">
-                                        <i class="metismenu-icon pe-7s-settings"></i>Acceso
-                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                        <i class="metismenu-icon fa fa-male"></i>Acceso
+                                        <i class="metismenu-state-icon fa fa-caret-down caret-left"></i>
                                     </a>
                                     <ul class="mm-collapse" style="">
                                         <li>
