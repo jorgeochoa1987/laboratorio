@@ -111,35 +111,20 @@ require('../templates/parts/header.php');
                         <div class="app-sidebar__inner">
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Opciones</li>
+
+                               
                                 <li>
-                                    <a href="?p=modulo" class="mm-active">
-                                        <i class="fa fa-book"></i>
-                                        Modulos
-                                    </a>
-                                    <a href="?p=cargo" class="mm-active">
-                                        <i class="fa fa-briefcase"></i>
-                                        Cargos
-                                    </a>
-                                    <a href="?p=usuario" class="mm-active">
+                                <a href="?p=cliente" class="">
                                         <i class="fa fa-address-book"></i>
-                                        Usuarios
-                                    </a>
+                                        Cliente
+                                    </a> 
                                     <a href="?p=lugarmuestras" class="mm-active">
                                         <i class="fa fa-address-book"></i>
                                         Lugar Muestras
                                     </a>
-                                    <a href="?p=tipomuestras" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Tipo Muestras
-                                    </a>
-                                    <a href="?p=tipomaterias" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Tipo Materias Primas
-                                    </a>
-                                    <a href="?p=tipoproductos" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Tipo Productos
-                                    </a>
+                                   
+                                   
+                                   
                                     <a href="?p=unidades" class="mm-active">
                                         <i class="fa fa-address-book"></i>
                                         Unidades
@@ -149,6 +134,70 @@ require('../templates/parts/header.php');
                                         Procedencia MP
                                     </a>
                                 </li>
+
+  
+                                
+<li>
+                        <a href="#" aria-expanded="false">
+                            <i class="metismenu-icon pe-7s-science"></i>Configuración
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                                    <ul class="mm-collapse" style="">
+                                <li>
+                                    <a href="#" aria-expanded="false">
+                                        <i class="metismenu-icon pe-7s-science"></i>Tipo de elementos
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul class="mm-collapse" style="">
+                                        <li>
+                                            <a href="?p=tipomuestras" class="mm-active">
+                                                <i class="fa fa-address-book"></i>
+                                                Muestras
+                                            </a>
+                                        </li>
+                                        <li>   
+                                             <a href="?p=tipomaterias" class="mm-active">
+                                                <i class="fa fa-address-book"></i>
+                                                Materias Primas
+                                            </a>        
+                                        </li>
+                                        <li>
+                                             <a href="?p=tipoproductos" class="mm-active">
+                                                <i class="fa fa-address-book"></i>
+                                                Productos
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" aria-expanded="false">
+                                        <i class="metismenu-icon pe-7s-settings"></i>Acceso
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul class="mm-collapse" style="">
+                                        <li>
+                                            <a href="?p=modulo" class="">
+                                                <i class="fa fa-book"></i>
+                                                Modulos
+                                            </a>
+                                        </li>
+                                        <li>   
+                                            <a href="?p=cargo" class="">
+                                                <i class="fa fa-briefcase"></i>
+                                                Cargos
+                                            </a>        
+                                        </li>
+                                        <li>
+                                            <a href="?p=usuario" class="">
+                                                <i class="fa fa-address-book"></i>
+                                                Usuarios
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                              </ul>  
+</li>
+                                
                             </ul>
                         </div>
                     </div>

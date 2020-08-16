@@ -17,7 +17,7 @@
                   <th>Acciónes</th>
                </tr>
                </head>
-               <body>
+               <body> 
                <?php  
                $usuario = "SELECT `id`, `identificacion`, `nombres`, `apellidos`, `correo`, `idCargo` FROM `usuarios`" ;
                $resultado = mysqli_query($conexion,$usuario);
