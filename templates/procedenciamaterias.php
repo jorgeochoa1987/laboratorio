@@ -1,18 +1,42 @@
 <?php
     require('../modulos/cnx.php');?>
 
-<div class="main-card mb-3 card" id="cuerpo">
-      <div class="card-body"><h5 class="card-title">Listado Procedencia de Materias Primas</h5>
-            <br> 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo</button>
-            <table class="mb-0 table" id="tablausuarios">
-               <head>
-               <tr>
-                  <th>Id</th>
-                  <th>Nombre</th>
-                  <th>Descripción</th>
-               </tr>
-               </head>
+
+<div class="app-main__inner">
+                        <div class="app-page-title">
+                            <div class="page-title-wrapper">
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+                                        <i class="fa fa-users icon-gradient bg-tempting-azure"></i>
+                                    </div>
+                                    <div>Listado de Procedencia de Materias Primas
+                                        <div class="page-title-subheading">Actualmente cuenta con # de procedencias de materias primas registrados</div>
+                                    </div>
+                                </div>
+                                <div class="page-title-actions">
+                                  
+                                    <div class="d-inline-block dropdown">
+                                        <button type="button"  aria-haspopup="true" class="btn-shadow  btn btn-info"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa fa-user-plus"></i>
+                                            </span>
+                                            Agregar
+                                        </button>
+                                        
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>   
+                        <div class="main-card mb-3 card">
+                            <div class="card-body">
+                                <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="example_length"><label>Mostrar <select name="example_length" aria-controls="example" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="example_filter" class="dataTables_filter"><label>Buscar:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example"></label></div></div></div><div class="row"><div class="col-sm-12"><table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered dataTable dtr-inline" role="grid" aria-describedby="example_info">
+                                    <thead>
+                                    <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 128.2px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Id</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 44.2px;" aria-label="Age: activate to sort column ascending">Nombre</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 94.2px;" aria-label="Start date: activate to sort column ascending">Descripción</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 69.2px;" aria-label="Salary: activate to sort column ascending">Acciones</th>
+                                    </thead>
                <body>
                <?php  
                $usuario = "SELECT `id`, `nombre`, `descripcion` FROM `procedenciaMaterias`" ;
