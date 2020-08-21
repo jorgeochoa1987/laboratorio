@@ -116,28 +116,7 @@ require('../templates/parts/header.php');
                                     <a href="?p=cliente" aria-expanded="false">
                                         <i class="metismenu-icon fa fa-users"></i>Clientes
                                     </a>
-                                </li>       
-                                <li>
-                              
-                                    <a href="?p=lugarmuestras" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Lugar Muestras
-                                    </a>
-                                   
-                                   
-                                   
-                                    <a href="?p=unidades" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Unidades
-                                    </a>
-                                    <a href="?p=procedenciamaterias" class="mm-active">
-                                        <i class="fa fa-address-book"></i>
-                                        Procedencia MP
-                                    </a>
-                                </li>
-
-  
-                                
+                                </li>   
 <li>
                         <a href="#" aria-expanded="false">
                             <i class="metismenu-icon fa fa-cog"></i>Configuración
@@ -151,21 +130,46 @@ require('../templates/parts/header.php');
                                     </a>
                                     <ul class="mm-collapse" style="">
                                         <li>
-                                            <a href="?p=tipomuestras" class="mm-active">
+                                            <a href="?p=tipomuestras" class="">
                                                 <i class="fa fa-address-book"></i>
-                                                Muestras
+                                                Tipo Muestras
                                             </a>
                                         </li>
                                         <li>   
-                                             <a href="?p=tipomaterias" class="mm-active">
+                                             <a href="?p=tipomaterias" class="">
                                                 <i class="fa fa-address-book"></i>
-                                                Materias Primas
+                                                Tipo MP
                                             </a>        
                                         </li>
                                         <li>
-                                             <a href="?p=tipoproductos" class="mm-active">
+                                             <a href="?p=tipoproductos" class="">
                                                 <i class="fa fa-address-book"></i>
-                                                Productos
+                                                Tipo Productos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="?p=lugarmuestras" class="">
+                                                <i class="fa fa-address-book"></i>
+                                                Lugar Muestras
+                                             </a>
+                                        </li>
+                                   
+                                        <li>
+                                            <a href="?p=unidades" class="">
+                                            <i class="fa fa-address-book"></i>
+                                                Unidades
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="?p=procedenciamaterias" class="">
+                                             <i class="fa fa-address-book"></i>
+                                                Procedencia MP
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="?p=materiasprimas" class="">
+                                             <i class="fa fa-address-book"></i>
+                                                Materias Primas
                                             </a>
                                         </li>
                                     </ul>

@@ -20,6 +20,6 @@
   <script type="text/javascript" src="../js/tipoproductos.js"></script>
   <script type="text/javascript" src="../js/unidades.js"></script>
   <script type="text/javascript" src="../js/procedenciamaterias.js"></script>
- 
+  <script type="text/javascript" src="../js/materiasprimas.js"></script>
 </body>
 </html>
