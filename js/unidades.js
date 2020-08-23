@@ -84,7 +84,7 @@ function editarunidades(id){
          type: 'POST', 
          data: {
          'accion':'actualizar',  
-         'save':1,
+         'save':1,  
          'id':ide,
          'nombre':nombre,
          'descripcion':descripcion,
