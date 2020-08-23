@@ -79,8 +79,8 @@ function eliminartipomuestras(id)
 }
 
 
-function subireditarmodulo(id)
-{   var ide = id;
+function subireditartipomuestras(id)
+{   var ide = id; 
     $.ajax({ 
         url: '../modulos/modulotipomuestras.php',  // esto es una función 
         type: 'POST', 
@@ -100,12 +100,11 @@ function subireditarmodulo(id)
 )};
 
 function editartipomuestras(id){
-    var ide =id
-
-    const nombre = $('#txt-nombretipomuestras').val().toUpperCase()
-    const descripcion = $('#txt-descripciontipomuestras').val()
-
-     if ( nombre === '') {
+    var ide =id;
+    const nombre = $('#txt-Ednombretm').val();  
+    const descripcion = $('#txt-Eddescriptm').val();
+ 
+     if ( nombre == '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
          return
      }
@@ -115,10 +114,10 @@ function editartipomuestras(id){
          type: 'POST', 
          data: {
          'accion':'actualizar',  
-         'save':1,
+         'save':1, 
          'id':ide,
          'nombre':nombre,
-         'descripcion':descripcion,
+         'descripcion':descripcion, 
          },
      }).done(function(echo){
      $("#resultado").html(echo);
@@ -126,6 +125,10 @@ function editartipomuestras(id){
       {
           swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
          document.getElementById("exampleModal").style.display = "none"; 
+         window.setTimeout(function(){
+            location.reload()
+          } ,5000);   
+              
          //===============falta agregar el usuario sin refrescar la página ==================
      } 
       else

@@ -86,9 +86,9 @@ if (isset($_POST['accion']))
 			  <form class="">
                     <div class="position-relative form-group"><label for="id_user" class="">Nombre</label>
 
-                        <input id="txt-nombreunidades" type="text" placeholder="nombre" value="<?php echo $row["nombre"] ?>" required class="form-control"></div>
+                        <input id="txt-Ednombreunidades" type="text" placeholder="nombre" value="<?php echo $row["nombre"] ?>" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="descripcion" class="">Descripción</label>
-                        <input id="txt-descripcionunidades" type="text" placeholder="descripcion" value=" <?php echo $row["descripcion"] ?>" required class="form-control"></div>
+                        <input id="txt-Eddescripcionunidades" type="text" placeholder="descripcion" value=" <?php echo $row["descripcion"] ?>" required class="form-control"></div>
                     
                 </form>
       </div> 

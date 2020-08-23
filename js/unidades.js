@@ -33,6 +33,9 @@ function guardarunidades(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
+        window.setTimeout(function(){
+            location.reload()
+          } ,5000);   
         //===============falta agregar el usuario sin refrescar la página ==================
     } 
      else
@@ -68,8 +71,8 @@ function subireditarunidades(id)
 function editarunidades(id){
     var ide =id
 
-    const nombre = $('#txt-nombreunidades').val().toUpperCase()
-    const descripcion = $('#txt-descripcionunidades').val()
+    const nombre = $('#txt-Ednombreunidades').val().toUpperCase()
+    const descripcion = $('#txt-Eddescripcionunidades').val()
 
      if ( nombre === '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -92,6 +95,9 @@ function editarunidades(id){
       {
           swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
          document.getElementById("exampleModal").style.display = "none"; 
+         window.setTimeout(function(){
+            location.reload()
+          } ,5000);    
          //===============falta agregar el usuario sin refrescar la página ==================
      } 
       else

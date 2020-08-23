@@ -52,7 +52,6 @@
                   </td> 
                   </tr> 
                <?php }?> 
-                  <td class="nuevos"></td>
 
                </body>
             </table>
@@ -72,10 +71,10 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"> 
       <form class="">
                     <div class="position-relative form-group"><label for="nombre" class="">Nombre</label>
-                        <input id="txt-nombretipomuestras" type="text" placeholder="nombre" required class="form-control"></div>
+                        <input id="txt-Ednombretipomuestras" type="text" placeholder="nombre" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="descripcion" class="">Descripción</label>
                         <input id="txt-descripciontipomuestras" type="text" placeholder="Descripcion" required class="form-control"></div>
                     
@@ -106,4 +105,6 @@
      
     </div>
   </div>
+</div>
+
 </div>

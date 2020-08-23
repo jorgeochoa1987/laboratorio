@@ -24,11 +24,13 @@ if (isset($_POST['accion']))
 	  }
         }
   }
+
+
   if (isset($_POST['accion'])) 
   {
   if ($_POST['accion'] == 'actualizar') 
 	  {
-	  $id  = $_POST['id'];
+	  $id  = $_POST['id']; 
 	  $nombre = $_POST['nombre'];
 	  $descripcion = $_POST['descripcion'];
   
@@ -39,7 +41,7 @@ if (isset($_POST['accion']))
 		if ($resultado)
 	{
 	  echo("1");
-	}
+	} 
 		else
 	{
 	  echo($sql);  
@@ -86,12 +88,12 @@ if (isset($_POST['accion']))
 			  <form class="">
                     <div class="position-relative form-group"><label for="id_user" class="">Nombre</label>
 
-                        <input id="txt-nombretipomuestras" type="text" placeholder="nombre" value="<?php echo $row["nombre"] ?>" required class="form-control"></div>
+                        <input id="txt-Ednombretm" type="text" placeholder="nombre" value="<?php echo $row["nombre"] ?>" required class="form-control"></div>
                     <div class="position-relative form-group"><label for="descripcion" class="">Descripción</label>
-                        <input id="txt-descripciontipomuestras" type="text" placeholder="descripcion" value=" <?php echo $row["descripcion"] ?>" required class="form-control"></div>
+                        <input id="txt-Eddescriptm" type="text" placeholder="descripcion" value=" <?php echo $row["descripcion"] ?>" required class="form-control"></div>
                     
                 </form>
-      </div> 
+      </div>   
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" id="btn-cerrar" data-dismiss="modal">Cerrar</button>
         <button class="mt-1 btn btn-primary" type="submit" onClick="editartipomuestras(<?php echo $row["id"] ?>)" value="actualizar">Actualizar</button>

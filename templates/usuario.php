@@ -5,7 +5,7 @@
                             <div class="page-title-wrapper">
                                 <div class="page-title-heading">
                                     <div class="page-title-icon">
-                                        <i class="fa fa-users icon-gradient bg-tempting-azure"></i>
+                                        <i class="fa fa-address-book icon-gradient bg-tempting-azure"></i>
                                     </div>
                                     <div>Listado de usuarios
                                         <div class="page-title-subheading">Actualmente cuenta con # de clientes registrados</div>
