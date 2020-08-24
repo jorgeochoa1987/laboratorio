@@ -11,6 +11,8 @@
   <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
 
   <script type="text/javascript" src="../assets/scripts/main.js"></script>
+  <script type="text/javascript" src="../js/myscript.js"></script>
+ 
   <script type="text/javascript" src="../js/usuarios.js"></script>
   <script type="text/javascript" src="../js/modulos.js"></script>
   <script type="text/javascript" src="../js/cargos.js"></script>
@@ -21,5 +23,7 @@
   <script type="text/javascript" src="../js/unidades.js"></script>
   <script type="text/javascript" src="../js/procedenciamaterias.js"></script>
   <script type="text/javascript" src="../js/materiasprimas.js"></script>
+  <script type="text/javascript" src="../js/cliente.js"></script> 
+
 </body>
 </html>
