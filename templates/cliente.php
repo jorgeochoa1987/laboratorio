@@ -75,13 +75,13 @@
       <div class="modal-body"> 
             <form class="">
                 <div class="position-relative form-group"><label for="identificacion" class="">Identificación</label>
-                    <input id="identificacion" type="text" placeholder="Ingrese identificación" required class="form-control"></div>
+                    <input id="identificacion" type="number" placeholder="Ingrese identificación" required class="form-control"></div>
                 <div class="position-relative form-group"><label for="razonsocial" class="">Razón social</label>
                     <input id="razonsocial" type="text" placeholder="Ingrese razón social" required class="form-control"></div>
                 <div class="position-relative form-group"><label for="direccion" class="">Dirección</label>
                     <input id="direccion" type="text" placeholder="Ingrese dirección" required class="form-control"></div>
                 <div class="position-relative form-group"><label for="direccion" class="">Teléfono</label>
-                    <input id="telefono" type="text" placeholder="Ingrese teléfono" required class="form-control"></div>
+                    <input id="telefono" type="number" placeholder="Ingrese teléfono" required class="form-control"></div>
                 <div class="position-relative form-group"><label for="contacto" class="">Contacto</label>
                     <input id="contacto" type="text" placeholder="Ingrese nombre contacto" required class="form-control"></div>
             </form> 

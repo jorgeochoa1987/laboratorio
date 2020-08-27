@@ -93,13 +93,13 @@ if (isset($_POST['accion']))
 			?>
 			  <form class="">
                 <div class="position-relative form-group"><label for="identificacion" class="">Identificación</label>
-                    <input id="edidentificacion" type="text" placeholder="Ingrese identificación" required class="form-control" value="<?php echo $row["identificacion"] ?>"></div>
+                    <input id="edidentificacion" type="number" placeholder="Ingrese identificación" required class="form-control" value="<?php echo $row["identificacion"] ?>"></div>
                 <div class="position-relative form-group"><label for="razonsocial" class="">Razón social</label>
                     <input id="edrazonsocial" type="text" placeholder="Ingrese razón social" required class="form-control"  value="<?php echo $row["razonSocial"] ?>"></div>
                 <div class="position-relative form-group"><label for="direccion" class="">Dirección</label>
                     <input id="eddireccion" type="text" placeholder="Ingrese dirección" required class="form-control"  value="<?php echo $row["direccion"] ?>"></div>
                 <div class="position-relative form-group"><label for="direccion" class="">Teléfono</label>
-                    <input id="edtelefono" type="text" placeholder="Ingrese teléfono" required class="form-control"  value="<?php echo $row["telefono"] ?>"></div>
+                    <input id="edtelefono" type="number" placeholder="Ingrese teléfono" required class="form-control"  value="<?php echo $row["telefono"] ?>"></div>
                 <div class="position-relative form-group"><label for="contacto" class="">Contacto</label>
                     <input id="edcontacto" type="text" placeholder="Ingrese nombre contacto" required class="form-control"  value="<?php echo $row["contacto"] ?>"></div>
             </form> 
