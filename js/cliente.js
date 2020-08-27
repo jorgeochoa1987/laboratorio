@@ -35,7 +35,7 @@ $("#btn-guardarcliente").click(function(){
         document.getElementById("exampleModal").style.display = "none"; 
         window.setTimeout(function(){
             location.reload()
-          } ,1000);  
+          } ,5000);  
   
     } 
      else
@@ -138,7 +138,7 @@ function editarcliente(id){
      document.getElementById("modaleditar").style.display = "none"; 
      window.setTimeout(function(){ 
         location.reload()
-      } ,1000);      
+      } ,5000);      
  } 
  
  ); 
