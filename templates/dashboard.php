@@ -116,6 +116,11 @@ require('../templates/parts/header.php');
                                     <a href="?p=cliente" aria-expanded="false">
                                         <i class="metismenu-icon fa fa-users"></i>Clientes
                                     </a>
+                                </li>  
+                                <li>
+                                    <a href="?p=producto" aria-expanded="false">
+                                        <i class="metismenu-icon fas fa-boxes"></i>Productos
+                                    </a>
                                 </li>   
 <li>
                         <a href="#" aria-expanded="false">
