@@ -35,8 +35,8 @@ $("#btn-guardarcliente").click(function(){
         document.getElementById("exampleModal").style.display = "none"; 
         window.setTimeout(function(){
             location.reload()
-          } ,600);  
- 
+          } ,1000);  
+  
     } 
      else
      {
@@ -135,10 +135,10 @@ function editarcliente(id){
      }).done(function(echo){
      $("#resultado").html(echo);
      swal('Registro se actualizó exitosamente'+ identificacion, "¡ Listo !");
-     document.getElementById("exampleModal").style.display = "none"; 
-     window.setTimeout(function(){
+     document.getElementById("modaleditar").style.display = "none"; 
+     window.setTimeout(function(){ 
         location.reload()
-      } ,500);      
+      } ,1000);      
  } 
  
  ); 
