@@ -35,8 +35,8 @@ $("#btn-guardarcliente").click(function(){
         document.getElementById("exampleModal").style.display = "none"; 
         window.setTimeout(function(){
             location.reload()
-          } ,4000);  
-
+          } ,600);  
+ 
     } 
      else
      {
