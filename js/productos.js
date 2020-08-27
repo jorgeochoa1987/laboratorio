@@ -34,7 +34,8 @@ function guardarproducto(){
      if(echo==1)
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
-        document.getElementById("exampleModal").style.display = "none"; 
+        document.getElementById("exampleModal").style.display = "none";
+        location.reload(); 
         //===============falta agregar el usuario sin refrescar la página ==================
     } 
      else
