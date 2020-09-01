@@ -1,7 +1,3 @@
-$(document).ready(iniciotipomaterias)
-
-
-
 $("#btn-guardarcliente").click(function(){
 
    identificacion = $('#identificacion').val().toUpperCase();

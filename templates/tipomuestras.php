@@ -18,7 +18,7 @@
                                             </span>
                                             Agregar
                                         </button>
-                                        
+                                      
                                     </div>
                                 </div>   
                             </div>
@@ -56,8 +56,6 @@
           </div>
      </div>
 </div>
-
-     </table>
 
 
      <!--modal -->
@@ -104,6 +102,4 @@
      
     </div>
   </div>
-</div>
-
 </div>

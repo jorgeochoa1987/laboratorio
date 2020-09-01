@@ -1,7 +1,3 @@
-$(document).ready(iniciotipomuestras)
-
-
-
 $('#btn-guardartipomuestras').click(function(){
  
 
