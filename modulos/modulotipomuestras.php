@@ -1,5 +1,6 @@
 <?php
 
+
 require('../modulos/cnx.php');
 
 if (isset($_POST['accion'])) 

@@ -41,6 +41,7 @@ $("#btn-guardarcliente").click(function(){
      else
      {
          alert('Verifica nuevamente la información'+echo );
+         console.log(echo);
      }
 }
 

@@ -1,17 +1,12 @@
 $(document).ready(iniciotipomuestras)
 
 
-function iniciotipomuestras() {
-    $('#btn-guardartipomuestras').click(guardartipomuestras)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminartipomuestras').click(eliminartipomuestras)
-}
 
+$('#btn-guardartipomuestras').click(function(){
+ 
 
-function guardartipomuestras(){
-
-   const nombre = $('#txt-nombretipomuestras').val().toUpperCase()
-   const descripcion = $('#txt-descripciontipomuestras').val()
+    nombre = $('#txt-Ednombretipomuestras').val().toUpperCase();
+    descripcion = $('#txt-descripciontipomuestras').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,7 +28,9 @@ function guardartipomuestras(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,5000);  
     } 
      else
      {
@@ -42,7 +39,7 @@ function guardartipomuestras(){
 }
 
 );
-}
+});
   
 
 function eliminartipomuestras(id)
@@ -101,8 +98,8 @@ function subireditartipomuestras(id)
 
 function editartipomuestras(id){
     var ide =id;
-    const nombre = $('#txt-Ednombretm').val();  
-    const descripcion = $('#txt-Eddescriptm').val();
+    nombre = $('#txt-Ednombretm').val();  
+    descripcion = $('#txt-Eddescriptm').val();
  
      if ( nombre == '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -121,21 +118,11 @@ function editartipomuestras(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         window.setTimeout(function(){
+    swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+    document.getElementById("exampleModal").style.display = "none"; 
+    window.setTimeout(function(){
             location.reload()
           } ,5000);   
-              
-         //===============falta agregar el usuario sin refrescar la página ==================
      } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
  );
  }

@@ -20,7 +20,8 @@
                                         </button> 
                                         
                                     </div> 
-                                </div>    </div> 
+                                </div>       
+                             </div> 
                         </div>            
                         <div class="main-card mb-3 card">
                             <div class="card-body">
@@ -33,7 +34,6 @@
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 94.2px;" aria-label="Start date: activate to sort column ascending">Dirección</th>
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 69.2px;" aria-label="Salary: activate to sort column ascending">Telefono</th> 
                                     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 69.2px;" aria-label="Salary: activate to sort column ascending">Acción</th></tr>
-
                                     </thead>
                                     <tbody><tr role="row" class="odd">
                                         <?php  
@@ -48,8 +48,8 @@
                                                     <td><?php echo $row['contacto'] ?></td> 
                                                     <td><?php echo $row['direccion'] ?></td> 
                                                     <td><?php echo $row['telefono'] ?></td> 
-                                                    <td> <button  class="btn btn-info"   data-toggle="modal" data-target="#modaleditar" onclick="subireditarcliente(<?php echo $row['id'] ?>)"> Editar </button>  
-                                                    <button   class="btn btn-danger"  onclick="eliminarcliente(<?php echo $row['id'];?>)">Eliminar </button> 
+                                                    <td> <button  class="btn btn-info"   data-toggle="modal" data-target="#modaleditar" onclick="subireditarcliente(<?php echo $row['id'] ?>)">Editar</button>  
+                                                    <button   class="btn btn-danger"  onclick="eliminarcliente(<?php echo $row['id'];?>)">Eliminar</button> 
                                                     </td> 
                                                     </tr> 
                                         <?php }?> 
@@ -100,7 +100,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="labeleditar">Editar Tipo de Materia Prima</h5>
+        <h5 class="modal-title" id="labeleditar">Editar Cliente</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
