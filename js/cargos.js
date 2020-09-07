@@ -1,17 +1,7 @@
-$(document).ready(inicioCargo)
+$('#btn-guardarcargo').click(function(){
 
-
-function inicioCargo() {
-    $('#btn-guardarcargo').click(guardarcargo)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminarcargo').click(eliminarcargo)
-}
-
-
-function guardarcargo(){
-
-   const nombre = $('#txt-nombrecargo').val().toUpperCase()
-   const descripcion = $('#txt-descripcioncargo').val()
+nombre = $('#txt-nombrecargo').val().toUpperCase();
+descripcion = $('#txt-descripcioncargo').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,7 +23,9 @@ function guardarcargo(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
@@ -42,7 +34,7 @@ function guardarcargo(){
 }
 
 );
-}
+});
   
 
 function eliminarcargo(id)
@@ -122,17 +114,11 @@ function editarcargo(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+     document.getElementById("exampleModal").style.display = "none"; 
+     window.setTimeout(function(){
+             location.reload()
+           } ,2000);   
+      } 
+  );
+  }

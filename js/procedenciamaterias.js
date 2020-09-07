@@ -1,17 +1,8 @@
-$(document).ready(inicioprocedenciamaterias)
+$('#btn-guardarprocedenciamaterias').click(function(){
 
 
-function inicioprocedenciamaterias() {
-    $('#btn-guardarprocedenciamaterias').click(guardarprocedenciamaterias)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminarprocedenciamaterias').click(eliminarprocedenciamaterias)
-}
-
-
-function guardarprocedenciamaterias(){
-
-   const nombre = $('#txt-nombreprocedenciamaterias').val().toUpperCase()
-   const descripcion = $('#txt-descripcionprocedenciamaterias').val()
+   nombre = $('#txt-nombreprocedenciamaterias').val().toUpperCase()
+   descripcion = $('#txt-descripcionprocedenciamaterias').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,7 +24,9 @@ function guardarprocedenciamaterias(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
@@ -42,7 +35,7 @@ function guardarprocedenciamaterias(){
 }
 
 );
-}
+});
   
 
 function eliminarprocedenciamaterias(id)
@@ -122,17 +115,11 @@ function editarprocedenciamaterias(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+     document.getElementById("exampleModal").style.display = "none"; 
+     window.setTimeout(function(){
+             location.reload()
+           } ,2000);   
+      } 
+  );
+  }

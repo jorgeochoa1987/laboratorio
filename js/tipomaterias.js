@@ -1,17 +1,7 @@
-$(document).ready(iniciotipomaterias)
+$('#btn-guardartipomaterias').click(function(){
 
-
-function iniciotipomaterias() {
-    $('#btn-guardartipomaterias').click(guardartipomaterias)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminartipomaterias').click(eliminartipomaterias)
-}
-
-
-function guardartipomaterias(){
-
-   const nombre = $('#txt-nombretipomaterias').val().toUpperCase()
-   const descripcion = $('#txt-descripciontipomaterias').val()
+   nombre = $('#txt-nombretipomaterias').val().toUpperCase();
+   descripcion = $('#txt-descripciontipomaterias').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,16 +23,18 @@ function guardartipomaterias(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
          alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
-}
+        }
+    }
+    
+    );
+    });
   
 
 function eliminartipomaterias(id)
@@ -102,8 +94,8 @@ function subireditartipomaterias(id)
 function editartipomaterias(id){
     var ide =id
 
-    const nombre = $('#txt-nombretipomaterias').val().toUpperCase()
-    const descripcion = $('#txt-descripciontipomaterias').val()
+     nombre = $('#txt-nombretipomaterias').val().toUpperCase();  
+     descripcion = $('#txt-descripciontipomaterias').val();  
 
      if ( nombre === '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -126,13 +118,10 @@ function editartipomaterias(id){
       {
           swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
          document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
+         window.setTimeout(function(){
+            location.reload()
+          } ,2000);   
      } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+    } 
+    );
+    }

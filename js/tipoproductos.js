@@ -1,17 +1,8 @@
-$(document).ready(iniciotipoproductos)
 
+    $('#btn-guardartipoproductos').click(function(){
 
-function iniciotipoproductos() {
-    $('#btn-guardartipoproductos').click(guardartipoproductos)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminartipoproductos').click(eliminartipoproductos)
-}
-
-
-function guardartipoproductos(){
-
-   const nombre = $('#txt-nombretipoproductos').val().toUpperCase()
-   const descripcion = $('#txt-descripciontipoproductos').val()
+        nombre = $('#txt-nombretipoproductos').val().toUpperCase();
+        descripcion = $('#txt-descripciontipoproductos').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,16 +24,18 @@ function guardartipoproductos(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
          alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
-}
+        }
+    }
+    
+    );
+    });
   
 
 function eliminartipoproductos(id)
@@ -102,8 +95,8 @@ function subireditartipoproductos(id)
 function editartipoproductos(id){
     var ide =id
 
-    const nombre = $('#txt-nombretipoproductos').val().toUpperCase()
-    const descripcion = $('#txt-descripciontipoproductos').val()
+    nombre = $('#txt-nombretipoproductos').val().toUpperCase();
+    descripcion = $('#txt-descripciontipoproductos').val();
 
      if ( nombre === '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -122,17 +115,11 @@ function editartipoproductos(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
           swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
          document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
+         window.setTimeout(function(){
+            location.reload()
+          } ,2000);   
      } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
  );
  }

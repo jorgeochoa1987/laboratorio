@@ -1,21 +1,11 @@
-$(document).ready(inicioUsuario)
+$('#btn-guardar').click(function(){
 
-const eliminar = '#btn-eliminar'
-
-function inicioUsuario() {
-    $('#btn-guardar').click(guardar)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminar').click(eliminar)
-}
-
-
-function guardar(){
-   const identificacion = $('#txt-id').val()
-   const nombre = $('#txt-nombre').val().toUpperCase()
-   const apellido = $('#txt-apellido').val().toUpperCase()
-   const correo = $('#txt-correo').val().toUpperCase()
-   const cargo = $('#txt-cargo').val().toUpperCase()
-   const pass = $('#txt-pass').val()
+    identificacion = $('#txt-id').val()
+    nombre = $('#txt-nombre').val().toUpperCase()
+    apellido = $('#txt-apellido').val().toUpperCase()
+    correo = $('#txt-correo').val().toUpperCase()
+    cargo = $('#txt-cargo').val().toUpperCase()
+    pass = $('#txt-pass').val()
     
     if (identificacion === '' || nombre === '' || apellido === '' || correo === '' || cargo === '' ||  pass === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -41,7 +31,9 @@ function guardar(){
      {
          swal('Registro guardado exitosamente'+ identificacion, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
@@ -50,7 +42,7 @@ function guardar(){
 }
 
 );
-}
+});
   
 
 function Eliminaruser(id)
@@ -109,12 +101,12 @@ function subireditar(id)
 
 function editarUsuario(ide){
     var ide =ide
-    const identificacion = $('#txt-idup').val()
-    const nombre = $('#txt-nombreup').val().toUpperCase()
-    const apellido = $('#txt-apellidoup').val().toUpperCase()
-    const correo = $('#txt-correoup').val().toUpperCase()
-    const cargo = $('#txt-cargoup').val().toUpperCase()
-    const pass = $('#txt-passup').val()
+    identificacion = $('#txt-idup').val()
+     nombre = $('#txt-nombreup').val().toUpperCase()
+     apellido = $('#txt-apellidoup').val().toUpperCase()
+     correo = $('#txt-correoup').val().toUpperCase()
+     cargo = $('#txt-cargoup').val().toUpperCase()
+     pass = $('#txt-passup').val()
 
      if (identificacion === '' || nombre === '' || apellido === '' || correo === '' || cargo === '' ||  pass === '' ) {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -137,17 +129,11 @@ function editarUsuario(ide){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ identificacion, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+    document.getElementById("exampleModal").style.display = "none"; 
+    window.setTimeout(function(){
+            location.reload()
+          } ,2000);   
      } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
  );
  }

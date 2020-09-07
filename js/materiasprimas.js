@@ -1,20 +1,10 @@
-$(document).ready(inicioMateriasprimas)
+ $('#btn-guardarMP').click(function(){
 
-//const eliminar = '#btn-eliminar'
-
-function inicioMateriasprimas() {
-    $('#btn-guardarMP').click(guardar)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminar').click(eliminar)
-}
-
-
-function guardar(){
-   const nombre = $('#txt-nombreMP').val().toUpperCase()
-   const descripcion = $('#txt-descripcionMP').val()
-   const tipo = $('#txt-tipoMP').val().toUpperCase()
-   const unidad = $('#txt-unidadMP').val().toUpperCase()
-   const procedencia = $('#txt-procedenciaMP').val()
+nombre = $('#txt-nombreMP').val().toUpperCase();
+descripcion = $('#txt-descripcionMP').val();
+tipo = $('#txt-tipoMP').val().toUpperCase();
+unidad = $('#txt-unidadMP').val().toUpperCase();
+procedencia = $('#txt-procedenciaMP').val()
     
     if (nombre === '' || tipo === '' || unidad === '' || procedencia === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -39,7 +29,9 @@ function guardar(){
      {
          swal('Registro guardado exitosamente'+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
@@ -48,7 +40,7 @@ function guardar(){
 }
 
 );
-}
+});
   
 
 function subireditarmaterias(id)
@@ -100,20 +92,14 @@ function editarmaterias(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+     document.getElementById("exampleModal").style.display = "none"; 
+     window.setTimeout(function(){
+             location.reload()
+           } ,2000);   
+      } 
+  );
+  }
 
 function Eliminaruser(id)
 {

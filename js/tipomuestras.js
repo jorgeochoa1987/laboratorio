@@ -26,7 +26,7 @@ $('#btn-guardartipomuestras').click(function(){
         document.getElementById("exampleModal").style.display = "none"; 
         window.setTimeout(function(){
             location.reload()
-          } ,5000);  
+          } ,2000);  
     } 
      else
      {
@@ -118,7 +118,7 @@ function editartipomuestras(id){
     document.getElementById("exampleModal").style.display = "none"; 
     window.setTimeout(function(){
             location.reload()
-          } ,5000);   
+          } ,2000);   
      } 
  );
  }

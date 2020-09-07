@@ -1,17 +1,8 @@
-$(document).ready(iniciounidades)
+$('#btn-guardarunidades').click(function(){
 
 
-function iniciounidades() {
-    $('#btn-guardarunidades').click(guardarunidades)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminarunidades').click(eliminarunidades)
-}
-
-
-function guardarunidades(){
-
-   const nombre = $('#txt-nombreunidades').val().toUpperCase()
-   const descripcion = $('#txt-descripcionunidades').val()
+    nombre = $('#txt-nombreunidades').val().toUpperCase()
+    descripcion = $('#txt-descripcionunidades').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -35,8 +26,7 @@ function guardarunidades(){
         document.getElementById("exampleModal").style.display = "none"; 
         window.setTimeout(function(){
             location.reload()
-          } ,5000);   
-        //===============falta agregar el usuario sin refrescar la página ==================
+          } ,2000);  
     } 
      else
      {
@@ -45,7 +35,7 @@ function guardarunidades(){
 }
 
 );
-}
+});
   
 
 function subireditarunidades(id)
@@ -91,23 +81,14 @@ function editarunidades(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         window.setTimeout(function(){
-            location.reload()
-          } ,5000);    
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+     document.getElementById("exampleModal").style.display = "none"; 
+     window.setTimeout(function(){
+             location.reload()
+           } ,2000);   
+      } 
+  );
+  }
 
 function eliminarunidades(id)
 {

@@ -1,18 +1,9 @@
-$(document).ready(inicioCargo)
 
+    $('#btn-guardarproducto').click(function(){
 
-function inicioCargo() {
-    $('#btn-guardarproducto').click(guardarproducto)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminarcargo').click(eliminarcargo)
-}
- 
-
-function guardarproducto(){ 
-
-   const nombre = $('#nombre').val().toUpperCase()
-   const descripcion = $('#descrip').val()
-   const id_tipo = $('#tipo').val()
+     nombre = $('#nombre').val().toUpperCase()
+     descripcion = $('#descrip').val()
+     id_tipo = $('#tipo').val()
 
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -35,8 +26,9 @@ function guardarproducto(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none";
-        location.reload(); 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
@@ -45,7 +37,8 @@ function guardarproducto(){
 }
 
 );
-}
+});
+  
   
 
 function eliminarcargo(id)
@@ -125,17 +118,11 @@ function editarcargo(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+     swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+     document.getElementById("exampleModal").style.display = "none"; 
+     window.setTimeout(function(){
+             location.reload()
+           } ,2000);   
+      } 
+  );
+  }

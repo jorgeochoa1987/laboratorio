@@ -1,17 +1,9 @@
-$(document).ready(iniciolugarmuestras)
+
+    $('#btn-guardarlugarmuestras').click(function(){
 
 
-function iniciolugarmuestras() {
-    $('#btn-guardarlugarmuestras').click(guardarlugarmuestras)
-   // $('#btn-editar').click(editar)
-    $('#btn-eliminarlugarmuestras').click(eliminarlugarmuestras)
-}
-
-
-function guardarlugarmuestras(){
-
-   const nombre = $('#txt-nombrelugarmuestras').val().toUpperCase()
-   const descripcion = $('#txt-descripcionlugarmuestras').val()
+     nombre = $('#txt-nombrelugarmuestras').val().toUpperCase();
+     descripcion = $('#txt-descripcionlugarmuestras').val()
     
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -33,17 +25,18 @@ function guardarlugarmuestras(){
      {
          swal('Registro guardado exitosamente '+ nombre, "¡ Listo !");
         document.getElementById("exampleModal").style.display = "none"; 
-        //===============falta agregar el usuario sin refrescar la página ==================
+        window.setTimeout(function(){
+            location.reload()
+          } ,2000);  
     } 
      else
      {
          alert('Verifica nuevamente la información'+echo );
-     }
-}
-
-);
-}
-  
+        }
+    }
+    
+    );
+    });
 
 function eliminarlugarmuestras(id)
 {
@@ -102,8 +95,8 @@ function subireditarlugarmuestras(id)
 function editarlugarmuestras(id){
     var ide =id
 
-    const nombre = $('#txt-nombrelugarmuestras').val().toUpperCase()
-    const descripcion = $('#txt-descripcionlugarmuestras').val()
+     nombre = $('#txt-nombrelugarmuestras').val().toUpperCase();
+     descripcion = $('#txt-descripcionlugarmuestras').val();
 
      if ( nombre === '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -122,17 +115,11 @@ function editarlugarmuestras(id){
          },
      }).done(function(echo){
      $("#resultado").html(echo);
-      if(echo==1)
-      {
-          swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
-         //===============falta agregar el usuario sin refrescar la página ==================
-     } 
-      else
-      {
-          alert('Verifica nuevamente la información'+echo );
-      }
- }
- 
- );
- }
+    swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
+    document.getElementById("exampleModal").style.display = "none"; 
+    window.setTimeout(function(){
+        location.reload()
+      } ,2000);   
+ } 
+);
+}
