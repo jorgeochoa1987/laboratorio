@@ -117,7 +117,7 @@ function editartipomaterias(id){
       if(echo==1)
       {
           swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-         document.getElementById("exampleModal").style.display = "none"; 
+         document.getElementById("modaleditar").style.display = "none"; 
          window.setTimeout(function(){
             location.reload()
           } ,2000);   

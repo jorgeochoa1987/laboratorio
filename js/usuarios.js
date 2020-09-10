@@ -130,7 +130,7 @@ function editarUsuario(ide){
      }).done(function(echo){
      $("#resultado").html(echo);
      swal('Registro se actualizó exitosamente'+ nombre, "¡ Listo !");
-    document.getElementById("exampleModal").style.display = "none"; 
+    document.getElementById("modaleditar").style.display = "none"; 
     window.setTimeout(function(){
             location.reload()
           } ,2000);   
