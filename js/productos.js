@@ -1,9 +1,9 @@
 
     $('#btn-guardarproducto').click(function(){
 
-     nombre = $('#nombre').val().toUpperCase()
-     descripcion = $('#descrip').val()
-     id_tipo = $('#tipo').val()
+     nombre = $('#nombre').val().toUpperCase();
+     descripcion = $('#descrip').val();
+     id_tipo = $('#tipo').val();
 
     if (nombre === '' ) {
         swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -75,10 +75,10 @@ function eliminarcargo(id)
 }
 
 
-function subireditarcargo(id)
+function subireditarproducto(id)
 {   var ide = id;
     $.ajax({ 
-        url: '../modulos/modulocargo.php',  // esto es una función 
+        url: '../modulos/moduloproducto.php',  // esto es una función 
         type: 'POST', 
         data: {
         'accion':'consultar',  
@@ -107,7 +107,7 @@ function editarcargo(id){
      }
  
      $.ajax({ 
-         url: '../modulos/modulocargo.php',  // esto es una función 
+         url: '../modulos/moduloproducto.php',  // esto es una función 
          type: 'POST', 
          data: {
          'accion':'actualizar',  
