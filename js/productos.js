@@ -95,11 +95,12 @@ function subireditarproducto(id)
 
 )};
 
-function editarcargo(id){
+function editarproducto(id){
     var ide =id
+    nombre = $('#nombre').val().toUpperCase();
+    descripcion = $('#descrip').val();
+    id_tipo = $('#tipo').val();
 
-    const nombre = $('#txt-nombrecargo').val().toUpperCase()
-    const descripcion = $('#txt-descripcioncargo').val()
 
      if ( nombre === '') {
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
@@ -114,7 +115,8 @@ function editarcargo(id){
          'save':1,
          'id':ide,
          'nombre':nombre,
-         'descripcion':descripcion,
+         'descripcion': descripcion,
+         'id_tipoProductos': id_tipo
          },
      }).done(function(echo){
      $("#resultado").html(echo);
