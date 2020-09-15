@@ -81,7 +81,7 @@
         <button type="button" class="btn btn-secondary" id="btn-cerrartipomuestras" data-dismiss="modal">Cerrar</button>
         <button class="mt-1 btn btn-primary" type="submit" id="btn-guardartipomuestras" value="Guardar">Guardar</button>
       </div>
-    </div>
+    </div> 
   </div>
 </div> 
 <!--Modal editar-->

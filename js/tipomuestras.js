@@ -92,7 +92,7 @@ function subireditartipomuestras(id)
 
 )};
 
-function editartipomuestras(id){
+function editartipomuestras(id){ 
     var ide =id;
     nombre = $('#txt-Ednombretm').val();  
     descripcion = $('#txt-Eddescriptm').val();
@@ -101,7 +101,7 @@ function editartipomuestras(id){
          swal('alert', 'Tiene campos vacios, por favor verifique.', 'warning')
          return
      }
- 
+  
      $.ajax({ 
          url: '../modulos/modulotipomuestras.php',  // esto es una función 
          type: 'POST', 
